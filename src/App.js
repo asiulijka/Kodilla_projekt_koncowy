@@ -1,3 +1,4 @@
+import React from 'react';
 
 
 function App() {
@@ -5,6 +6,10 @@ function App() {
     <div className="App">
       <header className="App-header">
         <p>
+          Home page
+        </p>
+
+        {/* <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
         <a
@@ -14,7 +19,7 @@ function App() {
           rel="noopener noreferrer"
         >
           Learn React
-        </a>
+        </a> */}
       </header>
     </div>
   );
