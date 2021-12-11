@@ -1,28 +1,29 @@
 import React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
+import { store } from './redux/store';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Home page
-        </p>
+import { MainLayout } from './components/layout/MainLayout/MainLayout';
+import { Homepage } from './components/views/Homepage/Homepage';
+import { ProductPage } from './components/views/ProductPage/ProductPage';
+import { Basket } from './components/views/Basket/Basket';
+import { NotFound } from './components/views/NotFound/NotFound';
 
-        {/* <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a> */}
-      </header>
-    </div>
-  );
-}
+const App = () => (
+  <Provider store={store}>
+    <BrowserRouter>
+      <MainLayout>
+        <Switch>
+          <Route exact path='/' component={Homepage} />
+          <Route exact path='/product/:id' component={ProductPage} />
+          <Route exact path='/basket' component={Basket} />
+          <Route path='*' component={NotFound} />
+        </Switch>
+      </MainLayout>
+    </BrowserRouter>
+  </Provider>
+);
 
-export default App;
+export { App };
+
