@@ -1,4 +1,37 @@
 @import '../../../styles/settings.scss';
 
-// .root {
-// }
+.root {
+  background-color: $color-main;
+
+  .topMenu {
+    display: flex;
+
+    .subpages {
+      // display: flex;
+      // align-self: stretch;
+    }
+
+    .customer {
+      margin-inline-start: auto;
+    }
+  }
+
+  ul {
+    display: flex;
+
+    li {
+      display: flex;
+
+      .nav {
+        text-transform: uppercase;
+        font-size: 13px;
+        padding: 1rem;
+        color: $color-light-blue;
+      
+        // &.active {
+        //   color: red; 
+        // }
+      }
+    }
+  }
+}

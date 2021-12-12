@@ -1,0 +1,41 @@
+@import '../../../styles/settings.scss';
+
+.root {
+
+  background-color: $color-main;
+  color: $color-light-blue;
+  font-size: 13px;
+  height: 55px;
+
+    .copyright {
+      text-align: center;
+      padding: 1rem;
+
+      p {
+        margin: 0;
+        font-size: 14px;
+        line-height: 26px;
+      }
+    }
+
+    // .socialMedia {
+    //   text-align: right;
+    //   ul {
+    //     margin: 0;
+    //     padding: 0;
+    //     list-style: none;
+
+    //     li {
+    //       display: inline-block;
+    //       margin-left: 1rem;
+
+    //       a {
+    //         text-decoration: none;
+    //       }
+    //     }
+    //   }
+    // }
+    
+  
+
+}
