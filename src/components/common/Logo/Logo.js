@@ -6,23 +6,20 @@ import clsx from 'clsx';
 // import { connect } from 'react-redux';
 // import { reduxSelector, reduxActionCreator } from '../../../redux/exampleRedux.js';
 
-import styles from './MainLayout.module.scss';
+import styles from './Logo.module.scss';
+// import {logo} from './../../public/images/Logo.png';
+// @import './../../public/images/Logo.png' as logo;
 
-import { Header } from '../Header/Header';
-import { Footer } from '../Footer/Footer';
-import { Logo } from '../../common/Logo/Logo';
+// const logo = require('Logo.PNG');
 
 const Component = ({className, children}) => (
   <div className={clsx(className, styles.root)}>
-    <Header />
-    <Logo />
     <div className={'container ' + styles.pageWrapper}>
-      {/* <div className='row'> */}
-      {/* <Logo /> */}
-      {children}
-      {/* </div> */}
+      <h2>Your Logo here</h2>
+      {/* <img src={require('./../../public/images/logo.png')} /> */}
     </div>
-    <Footer />
+    {/* <h2>Your Logo here</h2> */}
+    {/* <img src={require('./../../public/images/logo.png')} /> */}
   </div>
 );
 
@@ -42,7 +39,7 @@ Component.propTypes = {
 // const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
 
 export {
-  Component as MainLayout,
-  // Container as MainLayout,
-  Component as MainLayoutComponent,
+  Component as Logo,
+  // Container as Logo,
+  Component as LogoComponent,
 };

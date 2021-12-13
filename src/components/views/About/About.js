@@ -11,6 +11,7 @@ import styles from './About.module.scss';
 const Component = ({className, children}) => (
   <div className={clsx(className, styles.root)}>
     <h2>About us</h2>
+    <p>This subpage is under construction</p>
     {children}
   </div>
 );

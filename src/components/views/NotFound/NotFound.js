@@ -9,8 +9,9 @@ import clsx from 'clsx';
 import styles from './NotFound.module.scss';
 
 const Component = ({className, children}) => (
-  <div className={clsx(className, styles.root)}>
+  <div className={clsx(className, styles.root)}>   
     <h2>NotFound</h2>
+    <p>This subpage is under construction</p>
     {children}
   </div>
 );

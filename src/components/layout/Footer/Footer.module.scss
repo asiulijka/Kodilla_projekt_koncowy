@@ -2,10 +2,10 @@
 
 .root {
 
-  background-color: $color-main;
-  color: $color-light-blue;
+  background: linear-gradient($color-main-dark, 10%, $color-main, 90%, $color-main-dark);
   font-size: 13px;
   height: 55px;
+  padding: 0 $base-padding;
 
     .copyright {
       text-align: center;
@@ -15,6 +15,7 @@
         margin: 0;
         font-size: 14px;
         line-height: 26px;
+        color: $color-light-blue;
       }
     }
 

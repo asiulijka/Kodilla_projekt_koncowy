@@ -11,6 +11,7 @@ import styles from './Cart.module.scss';
 const Component = ({className, children}) => (
   <div className={clsx(className, styles.root)}>
     <h2>Cart</h2>
+    <p>This subpage is under construction</p>
     {children}
   </div>
 );

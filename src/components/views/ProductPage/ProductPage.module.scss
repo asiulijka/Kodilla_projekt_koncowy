@@ -1,4 +1,203 @@
 @import '../../../styles/settings.scss';
 
 // .root {
+
+//   .pageColumnLeft {
+//     margin: 15px 0;
+
+    // .photoContainer {
+    //   background-color: $product-page-bg-photo;
+    //   min-height: 80%;
+    //   position: relative;
+
+    //   .photo {
+    //     max-width: 100%;
+    //     object-fit: cover;
+    //   }
+
+    //   .expandButton {
+    //     position: absolute;
+    //     bottom: 5%;
+    //     right: 5%;
+    //   }
+    // }
+
+    // .sliderBox {
+    //   padding: 10px 15px;
+    //   display: flex;
+    //   min-height: 20%;
+    //   position: relative;
+    //   justify-content: space-evenly;
+  
+    //   .photoContainerMini {
+    //     background-color: $product-page-bg-photo;
+    //     margin: 0 10px;
+        
+    //     .photoMini {
+    //       max-width: 100%;
+    //       object-fit: cover;
+    //     }
+    //   }
+    // }
+
+    // .sideArrow {
+    //   display: flex;
+    //   justify-content: space-between;
+    //   position: absolute;
+    //   align-self: center; 
+    // }
+  // }
+
+
+
+
+
+  // .pageColumnRight {
+  //   margin: 15px 0;
+
+    // .productInfoContainer {
+      // border-bottom: 2px solid $product-page-bg-photo;
+      // margin: 0;
+      // padding: 15px 0;
+
+      // .buttonContainer {
+      //   padding: 0 3px;
+      // }
+    
+      // .productIntro {
+      //   margin: 0;
+      //   justify-content: space-between;
+
+      //   h4 {
+      //     font-weight: 600;
+      //   }
+      // }
+
+      // .starsRow {
+      //   color: $gray-text-color;
+      //   margin: 0;
+
+      //   p {
+      //     padding: 0 10px;
+      //     font-size: 90%;
+      //     margin: 5px 0;
+      //     color: $product-page-bg-dark;
+      //   }
+
+      //   p:first-of-type {
+      //     border-right: 2px solid $product-page-bg-photo;
+      //   }
+      // }
+
+      // .oldPrice {
+      //   text-decoration: line-through;
+      //   color: $product-page-bg-dark;
+      //   font-size: 130%;
+      // }
+
+      // .newPrice {
+      //   font-weight: bold;
+      //   color: $product-page-bg-light;
+      //   background-color: $product-sale-bg;
+      //   margin: 0 15px;
+      //   font-size: 130%;
+      //   padding: 5px 10px;
+      //   left: 18%;
+      // }
+
+      // .addToCartContainer {
+      //   margin: 0;
+
+      //   p {
+      //     margin: 0;
+      //     font-weight: 600;
+      //   }
+
+      //   .quantity {
+      //     padding: 5px 30px;
+      //     border: 1px solid $button-outline;
+      //     margin-right: 3px;
+      //     margin-left: 25px;
+      //   }
+      // }
+
+      // .addToCartContainer:last-of-type {
+      //   margin-top: 15px;
+      //   align-items: center;
+      // }
+
+      // .overview {
+      //   font-weight: 600;
+      //   margin-bottom: 5px;
+      // }
+
+      // .description {
+      //   color: $product-page-bg-dark;
+      // }
+
+      // .availabilityContainer {
+      //   margin: 0;
+      // }
+
+      // .availabilityContainer p {
+      //   font-weight: 600;
+      //   position: relative;
+      // }
+
+      // .availabilityContainer div {
+      //   left: 18%;
+      //   position: absolute;
+      //   color: $product-page-bg-dark;
+      // }
+
+      // .availabilityContainer:last-of-type p {
+      //   margin-bottom: 0;
+      // }
+
+      // .brands:hover .facebook {
+      //   color: $facebook;
+      // }
+
+      // .google {
+      //   color: $google-red;
+      // }
+
+      // .brands:hover .google {
+      //   color:  #ffffff;
+      // }
+
+      // .twitter {
+      //   color: $twitter;
+      // }
+      
+      // .brands:hover .twitter {
+      //   color:  #ffffff;
+      // }
+
+      // .pinterest {
+      //   color: $pinterest;
+      // }
+
+      // .brands:hover .pinterest {
+      //   color:  #ffffff;
+      // }
+
+      // .linkedIn {
+      //   color: $linkedin;
+      // }
+
+      // .brands:hover .linkedIn {
+      //   color:  #ffffff;
+      // }
+    // }
+
+    // .productInfoContainer:last-of-type {
+    //   border-bottom: none;
+    //   padding-bottom: 0;
+    //   margin-bottom: 30px;
+    // }
+  // }
+
+
+
 // }

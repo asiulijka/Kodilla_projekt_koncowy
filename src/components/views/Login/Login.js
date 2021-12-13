@@ -10,7 +10,9 @@ import styles from './Login.module.scss';
 
 const Component = ({className, children}) => (
   <div className={clsx(className, styles.root)}>
+
     <h2>Login</h2>
+    <p>This subpage is under construction</p>
     {children}
   </div>
 );

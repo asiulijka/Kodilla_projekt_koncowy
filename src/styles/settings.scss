@@ -1,17 +1,32 @@
 $base-size: 12px;
+$base-padding: 24px;
 
 
 
 // Color Variables
 $color-main: #22a6b3;
-$color-main-light: #7ed6df;
+// $color-main-light: #7ed6df;
+$color-main-dark:#156971;
+
 $color-light-blue: #dff9fb;
-$color-dark-navy: #130f40;
-$color-red-main: #eb4d4b;
+// $color-dark-navy: #130f40;
+$color-light-grey: #eff0f2;
+
+$font-color-header: #ff7979;
+$font-color-text: #535c68;
 
 // Brands
-$facebook:  #3b5998;
-$google-red: #DB4437;
-$twitter: #00acee;
-$pinterest: #c8232c;
-$linkedin: #0e76a8;
+// $facebook:  #3b5998;
+// $google-red: #DB4437;
+// $twitter: #00acee;
+// $pinterest: #c8232c;
+// $linkedin: #0e76a8;
+
+
+h2, h4 {
+  color: $font-color-header;
+}
+
+p {
+  color: $font-color-text;
+}
