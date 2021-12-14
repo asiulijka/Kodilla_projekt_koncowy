@@ -8,6 +8,7 @@ import clsx from 'clsx';
 
 import styles from './ProductPage.module.scss';
 // import { Col, Row, Container } from 'react-bootstrap';
+import { Button } from './../../common/Button/Button';
 
 const Component = ({className, children}) => (
   <div className={clsx(className, styles.root)}>
@@ -22,7 +23,8 @@ const Component = ({className, children}) => (
 
           <div className={styles.photoContainer}>
             {/* <p>Main Product Photo here</p> */}
-            <img className={styles.photo} src={'https://images.pexels.com/photos/68704/pexels-photo-68704.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'} alt='' />
+            <img className={styles.photo} src={'https://www.trends.nz/resizer/470/112140-0.jpg'} alt='' />
+            {/* <img className={styles.photo} src={'https://images.pexels.com/photos/68704/pexels-photo-68704.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'} alt='' /> */}
             {/* <Button className={styles.expandButton} variant='outline'>
               <FontAwesomeIcon icon={faExpandArrowsAlt}></FontAwesomeIcon>
             </Button> */ }
@@ -60,118 +62,82 @@ const Component = ({className, children}) => (
           <div className={'container ' + styles.productInfoContainer}>
             <div className='row'>
               <div className={'col ' + styles.productIntro}>
-                <h4>Bottle for sale</h4>
+                <h4>Arabica Coffee Mug</h4>
               </div>
               <div className={'col ' + styles.productIntro}>
-                <p>Price from $5.00 each</p>
+                <p>Price from</p>
+                <p><strong>$5.00 </strong>each</p>
               </div>
             </div>
           </div>
 
           <div className={'container ' + styles.productInfoContainer}>
             <div className='row'>
-              <div className={'col ' + styles.availabilityContainer}>
-                <p><strong>Category:</strong> Bottles</p>
-              </div>
-              <div className={'col ' + styles.availabilityContainer}>
-                <p>Availability: In Stock</p>
-              </div>
+              {/* <div className={'col ' + styles.availabilityContainer}> */}
+              <p><strong>Category:</strong> Mugs and cups</p>
             </div>
+            {/* <div className={'col ' + styles.availabilityContainer}>
+                <p>Availability: In Stock</p>
+              </div> */}
+            {/* </div> */}
           </div>
 
-          <div className={styles.productInfoContainer}>
+          <div className={'container ' + styles.productInfoContainer}>
             <p className={styles.overview}><strong>Description</strong></p>
             <p className={styles.description}>
-              Pellentesque dui quam, finibus et venenatis sed, tristique vitae nisi.
-              Pellentesque gravida erat in pretium ultrices. In auctor arcu eget leo
-              rutrum, non laoreet lorem dignissim.
+            Round, 330ml D handle stoneware coffee mug. The inside and out of the mug is one colour (yellow, green or red) and handwashing is recommended.
             </p>
           </div>
 
-          <div className={styles.productInfoContainer}>
-            <div className={'row ' + styles.addToCartContainer}>
-              <p>Add to cart</p>
-              {/* <div className={styles.buttonContainer}>
-                <Button variant='favourite2'>
-                  <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO
-                  CART
-                </Button>
-              </div> */}
-              {/* <div className={styles.buttonContainer}>
-                <Button variant='sideArrows'>
-                  <FontAwesomeIcon icon={faHeart} />
-                </Button>
-              </div> */}
-              {/* <div className={styles.buttonContainer}>
-                <Button variant='sideArrows'>
-                  <FontAwesomeIcon icon={faExchangeAlt} />
-                </Button>
-              </div> */}
-              {/* <div className={styles.buttonContainer}>
-                <Button variant='sideArrows'>
-                  <FontAwesomeIcon icon={faEnvelope} />
-                </Button>
-              </div> */}
-            </div>
-            <div className={'row ' + styles.addToCartContainer}>
-              <p>Quantity:</p>
-              {/* <div className={styles.quantity}>2</div>
-              <div className={styles.buttonContainer}>
-                <Button variant='quantityChange'>-</Button>
-              </div>
-              <div className={styles.buttonContainer}>
-                <Button variant='quantityChange'>+</Button>
-              </div> */}
-            </div>
+          <div className={'container ' + styles.productInfoContainer}>
+            <p className={styles.overview}><strong>Dimentions: </strong>
+              {/* Dia 81mm x H 95mm x 120mm (includes handle) */}
+            </p>
+            <p>Dia 81mm x H 95mm x 120mm (includes handle)</p>
           </div>
 
-          <div className={'row ' + styles.productInfoContainer}>
-            <div className={styles.buttonContainer}>
-              {/* <Button className={styles.brands} variant='facebook'>
-                <FontAwesomeIcon
-                  className={styles.facebook}
-                  icon={faFacebookF}
-                ></FontAwesomeIcon>{' '}
-                Share
-              </Button> */}
-            </div>
-            <div className={styles.buttonContainer}>
-              {/* <Button className={styles.brands} variant='google'>
-                <FontAwesomeIcon
-                  className={styles.google}
-                  icon={faGooglePlusG}
-                ></FontAwesomeIcon>{' '}
-                Google+
-              </Button> */}
-            </div>
-            <div className={styles.buttonContainer}>
-              {/* <Button className={styles.brands} variant='tweet'>
-                <FontAwesomeIcon
-                  className={styles.twitter}
-                  icon={faTwitter}
-                ></FontAwesomeIcon>{' '}
-                Tweet
-              </Button> */}
-            </div>
-            <div className={styles.buttonContainer}>
-              {/* <Button className={styles.brands} variant='pinterest'>
-                <FontAwesomeIcon
-                  className={styles.pinterest}
-                  icon={faPinterestP}
-                ></FontAwesomeIcon>{' '}
-                Pinterest
-              </Button> */}
-            </div>
-            <div className={styles.buttonContainer}>
-              {/* <Button className={styles.brands} variant='linkedin'>
-                <FontAwesomeIcon
-                  className={styles.linkedIn}
-                  icon={faLinkedinIn}
-                ></FontAwesomeIcon>{' '}
-                Linkedin
-              </Button> */}
-            </div>
+          <div className={'container ' + styles.productInfoContainer}>
+            <p className={styles.overview}><strong>Colours: </strong>
+              {/* Yellow, Green, Red */}
+            </p>
+            <p>Yellow, Green, Red</p>
           </div>
+
+          <div className={'container ' + styles.productInfoContainer}>
+            <p className={styles.overview}><strong>Decoration method: </strong>
+              {/* Pad Print 50mm x 50mm */}
+            </p>
+            <p>Pad Print 50mm x 50mm</p>
+          </div>
+
+          <div className={'container ' + styles.productInfoContainer}>
+            <div className={'row ' + styles.addToCartContainer}>
+              <p><strong>Availability:</strong> In Stock</p>
+
+              <div className={'row ' + styles.addToCartContainer}>
+                <p>Quantity:</p>
+                {/* <div className={styles.quantity}>2</div> */}
+                <div className={styles.buttonContainer}>
+          
+                  <Button variant='quantityChange'>-</Button>
+                </div>
+                <div className={styles.buttonContainer}>
+            
+                  <Button variant='quantityChange'>+</Button>
+                </div> 
+              </div>
+
+   
+              <div className={styles.buttonContainer}>
+                <Button variant='main'>
+                  Add to cart
+                </Button>
+              </div>
+       
+            </div>
+
+          </div>
+        
         </div>
       
       </div>

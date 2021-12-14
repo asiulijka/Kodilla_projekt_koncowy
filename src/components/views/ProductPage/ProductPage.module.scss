@@ -59,11 +59,12 @@
 
   .pageColumnRight {
     // margin: 15px 0;
+    // margin: 0;
 
     .productInfoContainer {
-      border-bottom: 2px solid $font-color-header;
-      margin: 0;
-      // padding: 15px 0;
+      // border-bottom: 2px solid $font-color-header;
+      // margin: 0;
+      padding: $base-padding*0.5 $base-padding;
 
       // .buttonContainer {
       //   padding: 0 3px;
@@ -82,12 +83,13 @@
       //   color: $gray-text-color;
       //   margin: 0;
 
-      //   p {
+        p {
+          margin: 0;
       //     padding: 0 10px;
       //     font-size: 90%;
       //     margin: 5px 0;
       //     color: $product-page-bg-dark;
-      //   }
+        }
 
       //   p:first-of-type {
       //     border-right: 2px solid $product-page-bg-photo;
@@ -144,41 +146,7 @@
       //   margin-bottom: 0;
       // }
 
-      // .brands:hover .facebook {
-      //   color: $facebook;
-      // }
-
-      // .google {
-      //   color: $google-red;
-      // }
-
-      // .brands:hover .google {
-      //   color:  #ffffff;
-      // }
-
-      // .twitter {
-      //   color: $twitter;
-      // }
       
-      // .brands:hover .twitter {
-      //   color:  #ffffff;
-      // }
-
-      // .pinterest {
-      //   color: $pinterest;
-      // }
-
-      // .brands:hover .pinterest {
-      //   color:  #ffffff;
-      // }
-
-      // .linkedIn {
-      //   color: $linkedin;
-      // }
-
-      // .brands:hover .linkedIn {
-      //   color:  #ffffff;
-      // }
     }
 
     // .productInfoContainer:last-of-type {
