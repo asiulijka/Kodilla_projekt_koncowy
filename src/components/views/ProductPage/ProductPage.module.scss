@@ -6,9 +6,12 @@
     // margin: 15px 0;
 
     .photoContainer {
-      background-color: $font-color-header;
+      // background-color: $font-color-header;
       min-height: 80%;
       position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
       .photo {
         max-width: 100%;
@@ -29,10 +32,10 @@
       min-height: 20%;
       // position: relative;
       // justify-content: space-evenly;
-      background-color: $font-color-text;
+      // background-color: $font-color-text;
   
       .photoContainerMini {
-        background-color: $font-color-header;
+        // background-color: $font-color-header;
         margin: 0 10px;
         padding: 0;
         
@@ -66,18 +69,32 @@
       // margin: 0;
       padding: $base-padding*0.5 $base-padding;
 
-      // .buttonContainer {
-      //   padding: 0 3px;
-      // }
+
+
     
-      // .productIntro {
+      .productIntro {
         // margin: 0;
         // justify-content: space-between;
+
+        // display: flex;
+        // align-items: center;
+        // justify-content: center;
+        align-self: center;
+       
+        .productIntro p {
+          text-align: right;
+        }
 
         // h4 {
         //   font-weight: 600;
         // }
-      // }
+      }
+
+      .productIntro p {
+        text-align: right;
+        color: $color-main;
+
+      }
 
       // .starsRow {
       //   color: $gray-text-color;
@@ -96,21 +113,32 @@
       //   }
       // }
 
+      .addQuantity {
+        margin: $base-padding*0.5 0;
+        padding: 0;
+        // color: red;
+
+      }
+
+      
+      .addQuantity p {
+        // color: $font-color-header-dark;
+        margin-bottom: $base-padding*0.5;
+        // margin-left: $base-padding*0.5;
+        padding: 0;
+      }
 
       // .addToCartContainer {
-      //   margin: 0;
+        // margin: 0;
+        // background-color: yellow;
+        
 
       //   p {
       //     margin: 0;
       //     font-weight: 600;
       //   }
 
-      //   .quantity {
-      //     padding: 5px 30px;
-      //     border: 1px solid $button-outline;
-      //     margin-right: 3px;
-      //     margin-left: 25px;
-      //   }
+
       // }
 
       // .addToCartContainer:last-of-type {
@@ -147,6 +175,12 @@
       // }
 
       
+    }
+
+    .decoration {
+      @extend .productInfoContainer;
+      border-bottom: 2px solid $font-color-header;
+
     }
 
     // .productInfoContainer:last-of-type {

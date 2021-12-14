@@ -9,6 +9,7 @@ import clsx from 'clsx';
 import styles from './ProductPage.module.scss';
 // import { Col, Row, Container } from 'react-bootstrap';
 import { Button } from './../../common/Button/Button';
+import { ChooseQty } from './../../features/ChooseQty/ChooseQty';
 
 const Component = ({className, children}) => (
   <div className={clsx(className, styles.root)}>
@@ -23,8 +24,9 @@ const Component = ({className, children}) => (
 
           <div className={styles.photoContainer}>
             {/* <p>Main Product Photo here</p> */}
-            <img className={styles.photo} src={'https://www.trends.nz/resizer/470/112140-0.jpg'} alt='' />
-            {/* <img className={styles.photo} src={'https://images.pexels.com/photos/68704/pexels-photo-68704.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'} alt='' /> */}
+            <img className={styles.photo} src={'https://primopromo.com.au/assets/Uploads/Products/bc4f018489/Arabica-Coffee-Mug+Yellow.jpg'} alt='' />
+            {/* <img className={styles.photo} src={'https://www.trends.nz/resizer/470/112140-0.jpg'} alt='' /> */}
+    
             {/* <Button className={styles.expandButton} variant='outline'>
               <FontAwesomeIcon icon={faExpandArrowsAlt}></FontAwesomeIcon>
             </Button> */ }
@@ -33,16 +35,17 @@ const Component = ({className, children}) => (
           <div className={'row ' + styles.sliderBox}>
             {/* <p>Slider box - mini photos</p> */}
             <div className={'col-2 ' + styles.photoContainerMini}>
-              <img className={styles.photoMini} src={'https://images.pexels.com/photos/2193300/pexels-photo-2193300.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'} alt='' />
+              <img className={styles.photoMini} src={'https://primopromo.com.au/assets/Uploads/Products/d1ae502f58/Arabica-Coffee-Mug+Red.jpg'} alt='' />
             </div>
             <div className={'col-2 ' + styles.photoContainerMini}>
-              <img className={styles.photoMini} src={'https://images.pexels.com/photos/2122423/pexels-photo-2122423.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'} alt='' />
+              <img className={styles.photoMini} src={'https://primopromo.com.au/assets/Uploads/Products/292be3bbba/Arabica-Coffee-Mug+Green.jpg'} alt='' />
             </div>
             <div className={'col-2 ' + styles.photoContainerMini}>
-              <img className={styles.photoMini} src={'https://images.pexels.com/photos/1619854/pexels-photo-1619854.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'} alt='' />
+              <img className={styles.photoMini} src={'https://primopromo.com.au/assets/Uploads/Products/5a8de58c0e/Arabica-Coffee-Mug+Dark-Blue.jpg'} alt='' />
             </div>
             <div className={'col-2 ' + styles.photoContainerMini}>
-              <img className={styles.photoMini} src={''} alt='' />
+              <img className={styles.photoMini} src={'https://primopromo.com.au/assets/Uploads/Products/2e18cf5e38/Arabica-Coffee-Mug+White.jpg'} alt='' />
+              {/* <img className={styles.photoMini} src={''} alt='' /> */}
             </div>
 
             {/* <div className={'col-12 ' + styles.sideArrow}>
@@ -61,12 +64,17 @@ const Component = ({className, children}) => (
 
           <div className={'container ' + styles.productInfoContainer}>
             <div className='row'>
-              <div className={'col ' + styles.productIntro}>
+              <div className={'col-6 ' + styles.productIntro}>
                 <h4>Arabica Coffee Mug</h4>
               </div>
               <div className={'col ' + styles.productIntro}>
-                <p>Price from</p>
-                <p><strong>$5.00 </strong>each</p>
+                <p><strong>Price from</strong></p>
+                <p><strong>$5.00/each </strong></p>
+              </div>
+              <div className={'col ' + styles.productIntro}>
+                <Button className={styles.addQuantity} variant='main'>
+                  Check for price details
+                </Button>
               </div>
             </div>
           </div>
@@ -85,7 +93,7 @@ const Component = ({className, children}) => (
           <div className={'container ' + styles.productInfoContainer}>
             <p className={styles.overview}><strong>Description</strong></p>
             <p className={styles.description}>
-            Round, 330ml D handle stoneware coffee mug. The inside and out of the mug is one colour (yellow, green or red) and handwashing is recommended.
+            Classic round 330mL stoneware coffee mug. The inside of the mug is white and out of the mug is one colour (yellow, green, dark blue, white or red). This product is not dishwasher safe and handwashing is recommended.
             </p>
           </div>
 
@@ -100,10 +108,10 @@ const Component = ({className, children}) => (
             <p className={styles.overview}><strong>Colours: </strong>
               {/* Yellow, Green, Red */}
             </p>
-            <p>Yellow, Green, Red</p>
+            <p>Yellow, Green, Red, White, Dark Blue</p>
           </div>
 
-          <div className={'container ' + styles.productInfoContainer}>
+          <div className={'container ' + styles.decoration}>
             <p className={styles.overview}><strong>Decoration method: </strong>
               {/* Pad Print 50mm x 50mm */}
             </p>
@@ -111,28 +119,25 @@ const Component = ({className, children}) => (
           </div>
 
           <div className={'container ' + styles.productInfoContainer}>
-            <div className={'row ' + styles.addToCartContainer}>
-              <p><strong>Availability:</strong> In Stock</p>
+            {/* <div className='row'> */}
+            <div className={'row ' + styles.addQuantity}>
+              {/* <p><strong>Availability:</strong> In Stock</p> */}
 
-              <div className={'row ' + styles.addToCartContainer}>
-                <p>Quantity:</p>
-                {/* <div className={styles.quantity}>2</div> */}
-                <div className={styles.buttonContainer}>
-          
-                  <Button variant='quantityChange'>-</Button>
-                </div>
-                <div className={styles.buttonContainer}>
-            
-                  <Button variant='quantityChange'>+</Button>
-                </div> 
-              </div>
+              {/* <div className={styles.addQuantity}> */}
+              <p><strong>Availability:</strong> In Stock</p>
+              <p><strong>Choose Quantity:</strong></p>
+              {/* <div> */}
+              <ChooseQty className={styles.addQuantity}/>
+              {/* </div> */}
+
+              {/* </div> */}
 
    
-              <div className={styles.buttonContainer}>
-                <Button variant='main'>
-                  Add to cart
-                </Button>
-              </div>
+              {/* <div className={styles.buttonContainer}> */}
+              <Button className={styles.addQuantity} variant='main'>
+                Add to cart
+              </Button>
+              {/* </div> */}
        
             </div>
 

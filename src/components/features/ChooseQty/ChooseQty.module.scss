@@ -1,0 +1,49 @@
+@import '../../../styles/settings.scss';
+
+.root {
+
+  .freeze {
+    // position: absolute;
+
+    .buttonContainer {
+      // padding: 0 3px;
+        // margin-top: $base-padding*0.25;
+        // margin-bottom: $base-padding*0.25;
+        padding: 0;
+        margin: 0;
+        // position: relative;
+      }
+
+      // .buttonNegative {
+      //   margin: $base-padding*0.25 0 $base-padding*0.25 $base-padding*0.5;
+      //   // background-color: yellow;
+      //   padding: 0;
+      // }
+
+      // .buttonPositive {
+      //   margin: $base-padding*0.25 0;
+      //   padding: 0;
+      // }
+
+      .quantity {
+        @extend .buttonContainer;
+        padding: $base-padding*0.2 $base-padding;
+        border: 1px solid $font-color-header;
+        border-radius: 7px;
+        // margin-right: 3px;
+        // margin-left: 25px;
+        // margin: 0;
+        // align-self: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+      }
+
+
+  }
+
+
+
+}
+
