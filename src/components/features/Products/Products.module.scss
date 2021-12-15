@@ -1,4 +1,7 @@
 @import '../../../styles/settings.scss';
 
-// .root {
-// }
+.root {
+  .productBox {
+    padding: $base-padding*0.3;
+  }
+}

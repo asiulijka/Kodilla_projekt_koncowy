@@ -120,6 +120,11 @@
 
       }
 
+      .addQuantityButton {
+        @extend .addQuantity;
+        margin: $base-padding*0.25 $base-padding;
+      }
+
       
       .addQuantity p {
         // color: $font-color-header-dark;

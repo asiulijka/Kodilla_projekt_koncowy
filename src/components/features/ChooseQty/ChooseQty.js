@@ -19,8 +19,8 @@ const Component = ({className, children}) => (
         {/* <div className={'row ' + styles.addToCartContainer}> */}
 
         {/* <div className={'col-1 '  + styles.buttonContainer}> */}
-        {/* <Button className={'col-1 ' + styles.buttonNegative} variant='quantityChange'>-</Button> */}
-        <Button className={'col-1 ' + styles.buttonContainer} variant='quantityChange'>-</Button>
+        <Button className={'col-1 ' + styles.buttonNegative} variant='quantityChange'>-</Button>
+        {/* <Button className={'col-1 ' + styles.buttonContainer} variant='quantityChange'>-</Button> */}
         {/* </div> */}
 
         {/* <div> */}

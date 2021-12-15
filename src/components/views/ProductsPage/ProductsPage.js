@@ -12,8 +12,8 @@ import { Products } from '../../features/Products/Products';
 
 const Component = ({className, children}) => (
   <div className={clsx(className, styles.root)}>
-    <h2>ProductsPage</h2>
-    {children}
+    <h2>This is ProductsPage, update title there (views/ProductsPage)</h2>
+    {/* {children} */}
     <Products />
   </div>
 );

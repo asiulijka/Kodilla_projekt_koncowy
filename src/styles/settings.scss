@@ -24,10 +24,11 @@ $font-color-text: #535c68;
 // $linkedin: #0e76a8;
 
 
-h2, h4 {
+h2, h4, h5 {
   color: $font-color-header;
 }
 
 p {
   color: $font-color-text;
+  // margin: 0;
 }

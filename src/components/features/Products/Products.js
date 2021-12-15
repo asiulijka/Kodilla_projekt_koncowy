@@ -8,10 +8,56 @@ import clsx from 'clsx';
 
 import styles from './Products.module.scss';
 
+import { ProductBox } from '../../common/ProductBox/ProductBox';
+
 const Component = ({className, children}) => (
   <div className={clsx(className, styles.root)}>
-    <h2>Products</h2>
-    {children}
+    <div className='container'>
+      <div className='row'>
+        <div className={`col-3 ${styles.productBox}`}>
+          <ProductBox />
+        </div>
+        <div className={`col-3 ${styles.productBox}`}>
+          <ProductBox />
+        </div>
+        <div className={`col-3 ${styles.productBox}`}>
+          <ProductBox />
+        </div>
+        <div className={`col-3 ${styles.productBox}`}>
+          <ProductBox />
+        </div>
+        <div className={`col-3 ${styles.productBox}`}>
+          <ProductBox />
+        </div>
+        <div className={`col-3 ${styles.productBox}`}>
+          <ProductBox />
+        </div>
+        <div className={`col-3 ${styles.productBox}`}>
+          <ProductBox />
+        </div>
+        <div className={`col-3 ${styles.productBox}`}>
+          <ProductBox />
+        </div>
+      </div>
+    </div>
+
+
+    {/* <div className={`row ${isFading ? styles.fadeIn : styles.fadeOut}`}>
+      {categoryProducts
+        .slice(activePage * productCount, (activePage + 1) * productCount)
+        .map(item => (
+          <div key={item.id} className={columnClass}>
+            <ProductBox {...item} addRating={addRating} />
+          </div>
+        ))}
+    </div> */}
+
+
+
+
+
+
+    {/* <ProductBox /> */}
   </div>
 );
 

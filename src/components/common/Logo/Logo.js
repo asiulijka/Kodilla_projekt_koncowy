@@ -9,21 +9,27 @@ import clsx from 'clsx';
 import styles from './Logo.module.scss';
 // import {logo} from './../../public/images/Logo.png';
 // @import './../../public/images/Logo.png' as logo;
-// import {logo} from './../../../../public/images/logo.png'
+
+// import logo from './logo.PNG';
+import logoW from './logo_white_bg.PNG';
 
 // const logo = require('Logo.PNG');
 
-const Component = ({className, children}) => (
-  <div className={clsx(className, styles.root)}>
-    <div className={'container ' + styles.pageWrapper}>
-      <h2>Your Logo here</h2>
-      {/* {logo} */}
+const Component = ({className, children}) => {
+  return (
+  
+    <div className={clsx(className, styles.root)}>
+      <div className={'container ' + styles.pageWrapper}>
+        {/* <h2>Your Logo here</h2> */}
+        {/* <img src={logo} alt='no img' /> */}
+        <img src={logoW} alt='no img' />
+        {/* <img src={require('./../../public/images/logo.png')} /> */}
+      </div>
+      {/* <h2>Your Logo here</h2> */}
       {/* <img src={require('./../../public/images/logo.png')} /> */}
     </div>
-    {/* <h2>Your Logo here</h2> */}
-    {/* <img src={require('./../../public/images/logo.png')} /> */}
-  </div>
-);
+  );
+};
 
 Component.propTypes = {
   children: PropTypes.node,

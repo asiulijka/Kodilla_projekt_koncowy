@@ -134,7 +134,7 @@ const Component = ({className, children}) => (
 
    
               {/* <div className={styles.buttonContainer}> */}
-              <Button className={styles.addQuantity} variant='main'>
+              <Button className={styles.addQuantityButton} variant='main'>
                 Add to cart
               </Button>
               {/* </div> */}
