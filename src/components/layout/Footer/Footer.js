@@ -25,8 +25,8 @@ const Component = ({className, children}) => (
     <div className='container'>
       {/* <h2>Footer</h2> */}
   
-      <div className={'col-lg-4 col-md-6 ' + styles.copyright}>
-        <p>©Copyright 2021 JoannaZ | All Rights Reserved</p>
+      <div className={'col ' + styles.copyright}>
+        <p>©Copyright 2021 JoannaZ | All Rights Reserved | inspired by https://www.trends.nz/</p>
       </div>
 
       {/* <div className={'col-lg-4 col-md-6 ' + styles.socialMedia}>

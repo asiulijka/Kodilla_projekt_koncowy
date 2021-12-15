@@ -6,18 +6,20 @@ import clsx from 'clsx';
 // import { connect } from 'react-redux';
 // import { reduxSelector, reduxActionCreator } from '../../../redux/exampleRedux.js';
 
-import styles from './Homepage.module.scss';
-
-import { Highlights } from '../../features/Highlights/Highlights';
-import { Products } from '../../features/Products/Products';
+import styles from './Highlights.module.scss';
 
 const Component = ({className, children}) => (
-  <div className={clsx(className, styles.root)}>    
-    {/* <h2>Homepage</h2>
-    <p>This subpage is under construction</p> */}
-    <Highlights />
-    <Products />
-    {children}
+  <div className={clsx(className, styles.root)}>
+    <div className='container'>
+      <div className='row'>
+        {/* <div className='col-12'> */}
+        <img className={styles.highlightPhoto} src={'https://www.trends.nz/Images/Banners/Banners_loggedout/6167a6444ddd3.jpg?20211215'} alt='' />
+        {/* </div> */}
+      </div>
+    </div>
+
+
+
   </div>
 );
 
@@ -37,7 +39,7 @@ Component.propTypes = {
 // const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
 
 export {
-  Component as Homepage,
-  // Container as Homepage,
-  Component as HomepageComponent,
+  Component as Highlights,
+  // Container as Highlights,
+  Component as HighlightsComponent,
 };

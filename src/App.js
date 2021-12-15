@@ -6,9 +6,10 @@ import { store } from './redux/store';
 
 import { MainLayout } from './components/layout/MainLayout/MainLayout';
 import { Homepage } from './components/views/Homepage/Homepage';
-import { Products } from './components/views/Products/Products';
+import { ProductsPage } from './components/views/ProductsPage/ProductsPage';
 import { ProductPage } from './components/views/ProductPage/ProductPage';
 import { Cart } from './components/views/Cart/Cart';
+import { Order } from './components/views/Order/Order';
 import { Login } from './components/views/Login/Login';
 import { Register } from './components/views/Register/Register';
 import { About } from './components/views/About/About';
@@ -20,10 +21,11 @@ const App = () => (
       <MainLayout>
         <Switch>
           <Route exact path='/' component={Homepage} />
-          <Route exact path='/products' component={Products} />
+          <Route exact path='/products' component={ProductsPage} />
           <Route exact path='/products/:productId' component={ProductPage} />
           <Route exact path='/about' component={About} />
           <Route exact path='/cart' component={Cart} />
+          <Route exact path='/order' component={Order} />
           <Route exact path='/login' component={Login} />
           <Route exact path='/register' component={Register} />
           <Route path='*' component={NotFound} />
