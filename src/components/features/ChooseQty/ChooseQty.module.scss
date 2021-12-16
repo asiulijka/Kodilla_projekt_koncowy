@@ -4,6 +4,7 @@
 
   .freeze {
     // position: absolute;
+    // width: -webkit-fill-available;
 
     .buttonContainer {
       // padding: 0 3px;
@@ -11,17 +12,28 @@
         // margin-bottom: $base-padding*0.25;
         padding: 0;
         margin: 0;
+        width: $base-padding*1.5;
         // position: relative;
         // text-align-last: end;
+        // width: -webkit-fill-available;
+        // font: red;
       }
 
-      .buttonNegative {
-        @extend .buttonContainer;
-      //   margin: $base-padding*0.25 0 $base-padding*0.25 $base-padding*0.5;
-      //   // background-color: yellow;
-      //   padding: 0;
-        text-align-last: end;
-      }
+      // .buttonNegative {
+        // @extend .buttonContainer;
+        // text-align-last: end;
+        // width: -webkit-fill-available;
+      // }
+
+      // .button {
+        // width: -webkit-fill-available;
+        // position: absolute;
+        // height: inherit;
+        // width: 100%;
+      //   text-align: justify;
+        // padding: 0;
+        
+      // }
 
       // .buttonPositive {
       //   margin: $base-padding*0.25 0;
@@ -40,10 +52,20 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        width: 50px;
+        margin-left: -($base-padding*0.25);
         
       }
 
-
+      .innerButton {
+        // width: 100%;
+        // width: -webkit-fill-available;
+        // position: absolute;
+        // width: inherit;
+        // width: 100%;
+        // text-align: justify;
+        font: red;
+      }
   }
 
 

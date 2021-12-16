@@ -8,11 +8,48 @@ import clsx from 'clsx';
 
 import styles from './Cart.module.scss';
 
+import { Button } from './../../common/Button/Button';
+import { ChooseQty } from './../../features/ChooseQty/ChooseQty';
+
 const Component = ({className, children}) => (
   <div className={clsx(className, styles.root)}>
-    <h2>Cart</h2>
-    <p>This subpage is under construction</p>
-    {children}
+    <h3>Your shopping basket</h3>
+    
+    <div className='container'>
+  
+      <div className={'row ' + styles.productContainer}>
+        <div className={'col-2 ' + styles.photo}>
+          <img src='https://www.trends.nz/resizer/470/112140-0.jpg' alt='product main photo' />
+        </div>
+        <div className={'col-3 ' + styles.description}>
+          <p><strong>Arabica Coffee Mug</strong></p>
+          <p className={styles.pFont}>Price from $5/each</p>
+          <p className={styles.pFont}>Available colours: Yellow, Green, Red, White, Dark Blue</p>
+          <p className={styles.pFont}>Decoration method: Pad Print 50mm x 50mm</p>
+        </div>
+        <div className={'col-3 ' + styles.quantity}>
+          <p className={styles.pQty}>
+            <strong>Choose quantity</strong>
+            {/* Choose quantity */}
+          </p>
+          <ChooseQty />
+        </div>
+        <div className='col-3'>Total price</div>
+        <div className='col-12'>Add your branding comments</div>
+        <div className='col-6'>Remove product</div>
+        <div className='col-6'>View full product details</div>
+      </div>
+
+
+
+      <div className='row'>
+
+        <p>Order summary</p>
+        
+      </div>
+
+    </div>
+
   </div>
 );
 

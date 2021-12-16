@@ -15,25 +15,19 @@ const Component = ({className, children}) => (
   <div className={clsx(className, styles.root)}>
 
     <div className='container'>
-      <div className={'row ' + styles.freeze}>
-        {/* <div className={'row ' + styles.addToCartContainer}> */}
+      <div className={styles.freeze}>
+        <div className='row'>
+          <div className={'col-1 ' + styles.buttonContainer}>
+            <Button className={styles.innerButton} variant='quantityChange'>-</Button>
+          </div>
 
-        {/* <div className={'col-1 '  + styles.buttonContainer}> */}
-        <Button className={'col-1 ' + styles.buttonNegative} variant='quantityChange'>-</Button>
-        {/* <Button className={'col-1 ' + styles.buttonContainer} variant='quantityChange'>-</Button> */}
-        {/* </div> */}
-
-        {/* <div> */}
-        <div className={'col-1 '  + styles.quantity}>202</div>
-        {/* </div> */}
-
-
-        
-        
-        {/* <div className={'col-1 ' + styles.buttonContainer}> */}
-        {/* <Button className={'col-1 '  + styles.buttonPositive} variant='quantityChange'>+</Button> */}
-        <Button className={'col-1 '  + styles.buttonContainer} variant='quantityChange'>+</Button>
-        {/* </div>  */}
+          <div className={'col-1 '  + styles.quantity}>202</div>
+          
+          <div className={'col-1 '  + styles.buttonContainer}>
+            <Button className={styles.innerButton} variant='quantityChange'>+</Button>
+          </div>
+          
+        </div>
 
       </div>
     </div>

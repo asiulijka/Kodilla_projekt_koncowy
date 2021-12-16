@@ -135,7 +135,7 @@ const Component = ({className, children}) => (
    
               {/* <div className={styles.buttonContainer}> */}
               <Button className={styles.addQuantityButton} variant='main'>
-                Add to cart
+                Add to basket
               </Button>
               {/* </div> */}
        

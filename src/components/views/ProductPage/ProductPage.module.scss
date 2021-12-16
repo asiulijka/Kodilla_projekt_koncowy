@@ -122,7 +122,7 @@
 
       .addQuantityButton {
         @extend .addQuantity;
-        margin: $base-padding*0.25 $base-padding;
+        margin: $base-padding*0.25 $base-padding*0.5;
       }
 
       

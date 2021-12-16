@@ -50,19 +50,19 @@ const Component = ({className, children}) => (
 
         <Button className={'col ' + styles.actionsButton} variant='main'>
           {/* <i class="fas fa-shopping-basket"></i> */}
-          Add to cart + basket icon
+          Add to basket + basket icon
           {/* <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART */}
           {/* <i className="fa fa-shopping-basket"></i> */}
         </Button>
 
    
 
-
-        <Button className={'col ' + styles.actionsButton} variant='main'>
-          Check for details
-        </Button>
-        {/* </div> */}
-
+        <Link className='col' to='/products/:id'>
+          <Button className={styles.actionsButton} variant='main'>
+            Check for details
+          </Button>
+          {/* </div> */}
+        </Link>
       </div>
 
         
