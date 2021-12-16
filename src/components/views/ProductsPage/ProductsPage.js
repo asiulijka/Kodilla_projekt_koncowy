@@ -12,7 +12,7 @@ import { Products } from '../../features/Products/Products';
 
 const Component = ({className, children}) => (
   <div className={clsx(className, styles.root)}>
-    <h2>This is ProductsPage, update title there (views/ProductsPage)</h2>
+    <h3>It is nice to see you here. Please choose from our wide range of products.</h3>
     {/* {children} */}
     <Products />
   </div>

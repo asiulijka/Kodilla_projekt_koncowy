@@ -7,6 +7,7 @@
 .root {
   // background-color: red;
   border: 1px solid $font-color-header;
+  border-radius: 7px;
   // border: 1px solid $color-main;
   // margin-bottom: 2rem;
   text-align: center;
@@ -71,6 +72,14 @@
    .actionsButton {
     padding: 0;
    }
+
+   .actionsButton:first-of-type {
+     margin-right: 3.6px;
+   }
+
+   .actionsButton:last-of-type {
+    margin-left: 3.6px;
+  }
  }
 
 }

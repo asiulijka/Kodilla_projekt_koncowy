@@ -1,4 +1,8 @@
 @import '../../../styles/settings.scss';
 
-// .root {
-// }
+.root {
+
+  h3 {
+    margin: $base-padding;
+  }
+}
