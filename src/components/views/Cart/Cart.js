@@ -23,29 +23,67 @@ const Component = ({className, children}) => (
         </div>
         <div className={'col-3 ' + styles.description}>
           <p><strong>Arabica Coffee Mug</strong></p>
-          <p className={styles.pFont}>Price from $5/each</p>
-          <p className={styles.pFont}>Available colours: Yellow, Green, Red, White, Dark Blue</p>
-          <p className={styles.pFont}>Decoration method: Pad Print 50mm x 50mm</p>
+          <p className={styles.pInfo}>Price from $5/each</p>
+          <p className={styles.pInfo}>Available colours: Yellow, Green, Red, White, Dark Blue</p>
+          <p className={styles.pInfo}>Decoration method: Pad Print 50mm x 50mm</p>
         </div>
-        <div className={'col-3 ' + styles.quantity}>
-          <p className={styles.pQty}>
-            <strong>Choose quantity</strong>
-            {/* Choose quantity */}
-          </p>
-          <ChooseQty />
+        <div className='col-5'>
+          <div className='row'>
+            <div className={'col-6 ' + styles.description}>
+              <p className={styles.pMain}>
+                <strong>Choose quantity</strong>
+                {/* Choose quantity */}
+              </p>
+              <ChooseQty />
+            </div>
+            <div className={'col-4 ' + styles.description}>
+              <p className={styles.pMain}>
+                <strong>Total price</strong>
+              </p>
+              <p className={styles.pPrice}>
+                <strong>$1010</strong>
+              </p>
+            </div>
+
+            <div className={'col-6 ' + styles.comment}>
+              {/* <form>
+                <input type="text" value="Add your branding comments here"></input>
+              </form> */}
+              Add your branding comments here
+            </div>
+          
+          </div>
+         
+         
+ 
+
         </div>
-        <div className='col-3'>Total price</div>
-        <div className='col-12'>Add your branding comments</div>
-        <div className='col-6'>Remove product</div>
-        <div className='col-6'>View full product details</div>
+
+        {/* <div className={'col-4 ' + styles.pInfo}> */}
+        <div className={'col-1 ' + styles.description}> 
+          <Button className={styles.actionButton} variant='cartGrey'>
+            Remove product
+          </Button>
+          {/* </div> */}
+          {/* <div className='col-4'> */}
+          <Button className={styles.actionButton} variant='cartGrey'>
+            View full product details
+          </Button>
+          {/* </div> */}
+          {/* <div className='col-4'> */}
+          <Button className={styles.actionButton} variant='update'>
+            Update basket
+          </Button>
+        </div>
+
+
+
       </div>
-
-
 
       <div className='row'>
 
         <p>Order summary</p>
-        
+
       </div>
 
     </div>
@@ -58,15 +96,15 @@ Component.propTypes = {
   className: PropTypes.string,
 };
 
-// const mapStateToProps = state => ({
-//   someProp: reduxSelector(state),
-// });
+{/* // const mapStateToProps = state => ({
+  someProp: reduxSelector(state),
+});
 
-// const mapDispatchToProps = dispatch => ({
-//   someAction: arg => dispatch(reduxActionCreator(arg)),
-// });
+const mapDispatchToProps = dispatch => ({
+  someAction: arg => dispatch(reduxActionCreator(arg)),
+});
 
-// const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
+const Container = connect(mapStateToProps, mapDispatchToProps)(Component); */}
 
 export {
   Component as Cart,

@@ -31,32 +31,45 @@
       // object-fit: cover;
     }
 
-    .description {
-      margin: $base-padding*0.5;
-
-      .pFont {
-        font-size: $base-size;
-        margin-bottom: $base-padding*0.25;
-      }
+    .pInfo {
+      font-size: $base-size;
+      margin-bottom: $base-padding*0.25;
     }
 
-    .quantity {
+    .description {
       margin: $base-padding*0.5;
-    
-      // align-items: center;
+      padding: 0;
 
-      .pQty {
+
+
+      .pMain {
         // color: $font-color-header;
         padding: 0 $base-padding*0.5;
         font-size: $base-size*1.2;
-            
+        // color: $color-main;
       }
+
+
+  
+    }
+    .pPrice {
+      // color: $color-main;
+      // color: $font-color-header-dark;
+      // color: $font-color-header;
+      padding-left: $base-padding;
     }
 
+    .comment {
+      border: 1px solid $font-color-header;
+      border-radius: 7px;
+      margin-left: $base-padding*1.5;
 
+    }
 
-
-    
+    // .itemButton {
+    //   @extend .description;
+    //   margin-left: -$base-padding;
+    // }
   }
 
 

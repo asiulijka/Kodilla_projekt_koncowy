@@ -30,3 +30,17 @@
   font-weight: 700;
   line-height: 1;
 }
+
+.cartGrey {
+  @extend .main;
+  background-color: $color-light-grey;
+  font-size: $base-size*1.1;
+  border: 1px solid $font-color-text;
+  color: $font-color-text;
+  font-weight: 500;
+}
+
+.update {
+  @extend .main;
+  background-color: $font-color-header;
+}
