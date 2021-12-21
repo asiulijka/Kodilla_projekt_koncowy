@@ -1,4 +1,79 @@
 @import '../../../styles/settings.scss';
 
-// .root {
-// }
+.root {
+
+  .orderContainer {
+    border: 1px solid $color-main;
+    border-radius: 7px;
+    // margin: $base-padding*0.5 $base-padding*20 $base-padding*0.5 $base-padding*3;
+    margin: $base-padding;
+    padding: $base-padding;
+
+
+    .values{
+      padding: 0;
+    }
+
+    .pOrder {
+      font-size: $base-size*1.2;
+      // font-size: $base-size;
+      margin-bottom: $base-padding*0.25;
+      // margin: 0;
+    }
+
+    .pOrderLast {
+      @extend .pOrder;
+      border-top: 1px solid $color-main-dark;
+      border-bottom: 1px solid $color-main-dark;
+      // margin-bottom: $base-padding;
+      padding: $base-padding*0.25 0;
+    }
+  
+    .pTotal {
+      margin-bottom: 0;
+    }
+
+    .pProd {
+      font-size: $base-size;
+    }
+
+
+    .amendBtn {
+      text-align: center;
+      padding-bottom: $base-padding*0.5;
+    }
+
+    .pInfo {
+      margin-bottom: $base-padding*0.25;
+    }
+
+    .strong {
+      color: $font-color-header;
+
+    }
+
+    .formContainer {
+      margin: $base-padding*0.5 $base-padding*15;
+      max-width: 300px;
+
+      .inputContainer {
+        margin: $base-padding*0.5;
+        
+        .inputForm {
+          width: -webkit-fill-available;
+          border: 1px solid $font-color-header;
+          border-radius: 7px;
+          padding: $base-padding*0.1 $base-padding*0.5;
+          // background-color: $color-main-dark;
+          color: $color-main-dark;
+          // color: white;
+        }
+
+      }
+    }
+
+  
+  }
+
+
+}
