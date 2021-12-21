@@ -10,7 +10,7 @@
     border: 1px solid $font-color-header;
     border-radius: 7px;
 
-    margin: 0 $base-padding*3;
+    margin: $base-padding*0.5 $base-padding*3;
 
     .photo {
       padding: $base-padding*0.5;
@@ -62,15 +62,66 @@
     .comment {
       border: 1px solid $font-color-header;
       border-radius: 7px;
-      margin-left: $base-padding*1.5;
-
+      margin-left: $base-padding;
+      font-size: $base-size;
     }
 
-    // .itemButton {
-    //   @extend .description;
-    //   margin-left: -$base-padding;
-    // }
+    .itemButton {
+      @extend .description;
+    //   margin-left: 0;
+
+    .actionButton{
+      margin: $base-padding*0.5 0;
+    }
+
+    }
   }
 
+
+  .line {
+    // background: linear-gradient($color-main-dark, 10%, $color-main, 90%, $color-main-dark);
+    // margin-left: -$base-padding*1.5;
+    // margin-right: -$base-padding*1.5;
+    margin: $base-padding 0;
+    border: 1px solid $color-main;
+    border-radius: 50px;
+    background-color: $color-main;
+  }
+
+  .orderContainer {
+    border: 1px solid $color-main-dark;
+    border-radius: 7px;
+    margin: $base-padding*0.5 $base-padding*20 $base-padding*0.5 $base-padding*3;
+    padding: $base-padding;
+  
+    .values{
+      padding: 0;
+    }
+
+
+    .pOrder {
+      font-size: $base-size*1.2;
+      // font-size: $base-size;
+      margin-bottom: $base-padding*0.25;
+      // margin: 0;
+    }
+
+    .pOrderLast {
+      @extend .pOrder;
+      border-top: 1px solid $color-main-dark;
+      border-bottom: 1px solid $color-main-dark;
+      margin-bottom: $base-padding;
+      padding: $base-padding*0.25 0;
+    }
+  
+    .checkoutBtn {
+      align-self: flex-end;
+      margin-bottom: $base-padding*0.5;
+      padding: 0;
+    }
+  
+  
+  
+  }
 
 }

@@ -27,7 +27,7 @@ const Component = ({className, children}) => (
           <p className={styles.pInfo}>Available colours: Yellow, Green, Red, White, Dark Blue</p>
           <p className={styles.pInfo}>Decoration method: Pad Print 50mm x 50mm</p>
         </div>
-        <div className='col-5'>
+        <div className='col-4'>
           <div className='row'>
             <div className={'col-6 ' + styles.description}>
               <p className={styles.pMain}>
@@ -45,11 +45,11 @@ const Component = ({className, children}) => (
               </p>
             </div>
 
-            <div className={'col-6 ' + styles.comment}>
+            <div className={'col-7 ' + styles.comment}>
               {/* <form>
                 <input type="text" value="Add your branding comments here"></input>
               </form> */}
-              Add your branding comments here
+              Add your branding comments/requirenments here
             </div>
           
           </div>
@@ -60,29 +60,109 @@ const Component = ({className, children}) => (
         </div>
 
         {/* <div className={'col-4 ' + styles.pInfo}> */}
-        <div className={'col-1 ' + styles.description}> 
-          <Button className={styles.actionButton} variant='cartGrey'>
+        <div className={'col-2 ' + styles.itemButton}> 
+          <Button variant='cartGrey'>
             Remove product
           </Button>
           {/* </div> */}
           {/* <div className='col-4'> */}
           <Button className={styles.actionButton} variant='cartGrey'>
-            View full product details
+            View item details
           </Button>
           {/* </div> */}
           {/* <div className='col-4'> */}
-          <Button className={styles.actionButton} variant='update'>
+          <Button variant='update'>
             Update basket
+          </Button>
+        </div>
+      </div>
+
+
+      <div className={'row ' + styles.productContainer}>
+        <div className={'col-2 ' + styles.photo}>
+          <img src='https://www.trends.nz/resizer/470/112140-0.jpg' alt='product main photo' />
+        </div>
+        <div className={'col-3 ' + styles.description}>
+          <p><strong>Arabica Coffee Mug</strong></p>
+          <p className={styles.pInfo}>Price from $5/each</p>
+          <p className={styles.pInfo}>Available colours: Yellow, Green, Red, White, Dark Blue</p>
+          <p className={styles.pInfo}>Decoration method: Pad Print 50mm x 50mm</p>
+        </div>
+        <div className='col-4'>
+          <div className='row'>
+            <div className={'col-6 ' + styles.description}>
+              <p className={styles.pMain}>
+                <strong>Choose quantity</strong>
+                {/* Choose quantity */}
+              </p>
+              <ChooseQty />
+            </div>
+            <div className={'col-4 ' + styles.description}>
+              <p className={styles.pMain}>
+                <strong>Total price</strong>
+              </p>
+              <p className={styles.pPrice}>
+                <strong>$1010</strong>
+              </p>
+            </div>
+            <div className={'col-7 ' + styles.comment}>
+              {/* <form>
+                <input type="text" value="Add your branding comments here"></input>
+              </form> */}
+              Add your branding comments/requirenments here
+            </div>
+          </div>
+        </div>
+        {/* <div className={'col-4 ' + styles.pInfo}> */}
+        <div className={'col-2 ' + styles.itemButton}> 
+          <Button variant='cartGrey'>
+            Remove product
+          </Button>
+          {/* </div> */}
+          {/* <div className='col-4'> */}
+          <Button className={styles.actionButton} variant='cartGrey'>
+            View item details
+          </Button>
+          {/* </div> */}
+          {/* <div className='col-4'> */}
+          <Button variant='update'>
+            Update basket
+          </Button>
+        </div>
+      </div>
+
+
+      <div className={styles.line}></div>
+
+      <h3>Order summary</h3>
+
+      <div className={'row ' + styles.orderContainer}>
+
+        <div className={'col-5 ' + styles.values}>
+          <p className={styles.pOrder}>Subtotal excl. GST</p>
+          <p className={styles.pOrder}>GST</p>
+          <p className={styles.pOrderLast}>Delivery</p>
+          <p><strong>Total</strong></p>
+        </div>
+
+        <div className={'col-2 ' + styles.values}>
+          <p className={styles.pOrder}>$22</p>
+          <p className={styles.pOrder}>$2</p>
+          <p className={styles.pOrderLast}>TBC</p>
+          <p><strong>$222</strong></p>
+        </div>
+        
+        <div className='col-1'></div>
+
+        <div className={'col-4 ' + styles.checkoutBtn}>
+          <Button variant='main'>
+            Continue to checkout
           </Button>
         </div>
 
 
 
-      </div>
 
-      <div className='row'>
-
-        <p>Order summary</p>
 
       </div>
 
