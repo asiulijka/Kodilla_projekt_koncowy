@@ -8,12 +8,42 @@ import clsx from 'clsx';
 
 import styles from './Login.module.scss';
 
+import { Button } from './../../common/Button/Button';
+import { Link } from 'react-router-dom';
+
 const Component = ({className, children}) => (
   <div className={clsx(className, styles.root)}>
 
-    <h2>Login</h2>
-    <p>This subpage is under construction</p>
-    {children}
+    <div className={styles.mainContainer}>
+
+      <form className={styles.formContainer}>
+        <div className={styles.inputContainer}>
+          <input
+            type="text"
+            placeholder="Email or Username"
+            name="email"
+            className={styles.inputForm}
+            required
+          />
+        </div>
+        <div className={styles.inputContainer}>
+          <input
+            type="password"
+            placeholder="Password"
+            name="password"
+            className={styles.inputForm}
+            required
+          />
+        </div>
+        <div className={styles.inputContainer}>
+          <Button variant='main'>
+            Login
+          </Button>
+        </div>
+      </form>
+
+      <p>If you dont have your username, please <Link className={styles.pRegister} to='/register'>REGISTER</Link></p>
+    </div>
   </div>
 );
 

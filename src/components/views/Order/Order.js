@@ -9,6 +9,7 @@ import clsx from 'clsx';
 import styles from './Order.module.scss';
 
 import { Button } from './../../common/Button/Button';
+import { Link } from 'react-router-dom';
 
 const Component = ({className, children}) => (
   <div className={clsx(className, styles.root)}>
@@ -39,9 +40,11 @@ const Component = ({className, children}) => (
               <p><strong>Your order:</strong></p>
             </div>
             <div className={'col-6 ' + styles.amendBtn}>
-              <Button className={styles.actionButton} variant='small'>
-                Amend order
-              </Button>
+              <Link to='/cart'>
+                <Button className={styles.actionButton} variant='small'>
+                  Amend order
+                </Button>
+              </Link>
             </div>       
           </div>
         

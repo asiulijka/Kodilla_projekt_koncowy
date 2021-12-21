@@ -10,6 +10,7 @@ import styles from './Cart.module.scss';
 
 import { Button } from './../../common/Button/Button';
 import { ChooseQty } from './../../features/ChooseQty/ChooseQty';
+import { Link } from 'react-router-dom';
 
 const Component = ({className, children}) => (
   <div className={clsx(className, styles.root)}>
@@ -53,9 +54,6 @@ const Component = ({className, children}) => (
             </div>
           
           </div>
-         
-         
- 
 
         </div>
 
@@ -66,9 +64,12 @@ const Component = ({className, children}) => (
           </Button>
           {/* </div> */}
           {/* <div className='col-4'> */}
-          <Button className={styles.actionButton} variant='cartGrey'>
-            View item details
-          </Button>
+          <Link to='/products/:id'>
+            <Button className={styles.actionButton} variant='cartGrey'>
+              View item details
+            </Button>
+          </Link>
+
           {/* </div> */}
           {/* <div className='col-4'> */}
           <Button variant='update'>
@@ -120,9 +121,11 @@ const Component = ({className, children}) => (
           </Button>
           {/* </div> */}
           {/* <div className='col-4'> */}
-          <Button className={styles.actionButton} variant='cartGrey'>
-            View item details
-          </Button>
+          <Link to='/products/:id'>
+            <Button className={styles.actionButton} variant='cartGrey'>
+              View item details
+            </Button>
+          </Link>
           {/* </div> */}
           {/* <div className='col-4'> */}
           <Button variant='update'>
@@ -154,11 +157,13 @@ const Component = ({className, children}) => (
         
         <div className='col-1'></div>
 
-        <div className={'col-4 ' + styles.checkoutBtn}>
+
+        <Link className={'col-4 ' + styles.checkoutBtn} to='/order'>
           <Button variant='main'>
             Continue to checkout
           </Button>
-        </div>
+        </Link>
+
 
 
 
