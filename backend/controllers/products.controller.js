@@ -41,19 +41,23 @@ exports.getOne = async (req, res) => {
 exports.postOrder = async (req, res) => {
   try {
     const { 
-      name, price, qty, addReq, availability } = req.body;
+      // name, price, qty, addReq, availability } = req.body;
+      productId, qty, addReq } = req.body;
 
     const newOrder = new Order({
-      name: name, 
-      price: price, 
+      productId: productId,
+      // name: name, 
+      // price: price, 
       qty: qty, 
-      addReq: addReq, 
-      availability: availability
+      addReq: addReq
+      // availability: availability
     });
 
     const savedOrder = await newOrder.save();
 
-    res.json({ newOrder: savedOrder });
+    const result = await Order.find({_id: savedOrder.id}).populate('productId');
+
+    res.json({ newOrder: result });
 
   } catch(err) {
     res.status(500).json({ message: err });
@@ -62,7 +66,7 @@ exports.postOrder = async (req, res) => {
 
 exports.getOrder = async (req, res) => {
   try {
-    const result = await Order.find();
+    const result = await Order.find().populate('productId');
     if(!result) res.status(404).json({ order: 'Not found' });
     else res.json(result);
   }
