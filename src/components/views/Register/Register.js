@@ -60,7 +60,7 @@ const Component = ({className, children}) => (
         </div>
       </form>
 
-      <p>If you already have your username, please <Link className={styles.pRegister} to='/login'>LOGIN</Link></p>
+      <p>If you <u>already have</u> your username, please <Link className={styles.pRegister} to='/login'>LOGIN</Link></p>
     </div>
   </div>
 );

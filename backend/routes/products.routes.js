@@ -1,37 +1,16 @@
 const express = require('express');
 const router = express.Router();
-// const sanitize = require('mongo-sanitize');
 
-const Product = require('../models/product.model');
-
+const ProductController = require('../controllers/products.controller');
 
 
-router.get('/products', async (req, res) => {
-  try {
-    const result = await Product.find();
-    if(!result) res.status(404).json({ product: 'Not found' });
-    else res.json(result);
-  }
-  catch(err) {
-    res.status(500).json(err);
-  }
-});
-
-router.get('/products/:id', async (req, res) => {
-  try {
-    const result = await Product
-      .findById(req.params.id);
-    if(!result) res.status(404).json({ product: 'Not found' });
-    else res.json(result);
-  }
-  catch(err) {
-    res.status(500).json(err);
-  }
-});
-
-
-
-
+router.get('/', ProductController.getMain);
+router.get('/products', ProductController.getMain);
+router.get('/products/:id', ProductController.getOne);
+// router.get('/about', ProductController.getMain);
+// router.get('/cart', ProductController.getAll);
+router.get('/order', ProductController.getOrder);
+router.post('/order', ProductController.postOrder);
 
 
 module.exports = router;
