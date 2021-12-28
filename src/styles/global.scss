@@ -13,4 +13,18 @@ body {
 
   font-family: 'Comforter', cursive;
   font-family: 'Poppins', sans-serif;
+
+
+  h2, h4, h5 {
+    color: $font-color-header;
+  }
+  
+  h3 {
+   color: $color-main; 
+  }
+  
+  p {
+    color: $font-color-text;
+    // margin: 0;
+  }
 }

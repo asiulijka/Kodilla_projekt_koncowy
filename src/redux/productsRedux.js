@@ -1,3 +1,5 @@
+import Axios from 'axios';
+
 /* selectors */
 export const getAll = ({products}) => products.data;
 
@@ -6,21 +8,45 @@ const reducerName = 'products';
 const createActionName = name => `app/${reducerName}/${name}`;
 
 /* action types */
-const FETCH_START = createActionName('FETCH_START');
-const FETCH_SUCCESS = createActionName('FETCH_SUCCESS');
-const FETCH_ERROR = createActionName('FETCH_ERROR');
+// const FETCH_START = createActionName('FETCH_START');
+// const FETCH_SUCCESS = createActionName('FETCH_SUCCESS');
+// const FETCH_ERROR = createActionName('FETCH_ERROR');
+
+const FETCH_ALL_PRODUCTS_START = createActionName('FETCH_ALL_PRODUCTS_START');
+const FETCH_ALL_PRODUCTS_SUCCESS = createActionName('FETCH_ALL_PRODUCTS_SUCCESS');
+const FETCH_ALL_PRODUCTS_ERROR = createActionName('FETCH_ALL_PRODUCTS_ERROR');
 
 /* action creators */
-export const fetchStarted = payload => ({ payload, type: FETCH_START });
-export const fetchSuccess = payload => ({ payload, type: FETCH_SUCCESS });
-export const fetchError = payload => ({ payload, type: FETCH_ERROR });
+// export const fetchStarted = payload => ({ payload, type: FETCH_START });
+// export const fetchSuccess = payload => ({ payload, type: FETCH_SUCCESS });
+// export const fetchError = payload => ({ payload, type: FETCH_ERROR });
+
+export const fetchAllProductsStarted = payload => ({ payload, type: FETCH_ALL_PRODUCTS_START });
+export const fetchAllProductsSuccess = payload => ({ payload, type: FETCH_ALL_PRODUCTS_SUCCESS });
+export const fetchAllProductsError = payload => ({ payload, type: FETCH_ALL_PRODUCTS_ERROR });
 
 /* thunk creators */
+export const fetchAllProducts = () => {
+  console.log('fetchAllProducts in productsRedux START');
+  return (dispatch, getState) => {
+    dispatch(fetchAllProductsStarted());
+    console.log('fetchAllProducts in productsRedux END');
+
+    Axios
+      .get(`http://localhost:8000/api/products`)
+      .then(res => {
+        dispatch(fetchAllProductsSuccess(res.data));
+      })
+      .catch(err => {
+        dispatch(fetchAllProductsError(err.message || true));
+      });
+  };
+};
 
 /* reducer */
 export const reducer = (statePart = [], action = {}) => {
   switch (action.type) {
-    case FETCH_START: {
+    case FETCH_ALL_PRODUCTS_START: {
       return {
         ...statePart,
         loading: {
@@ -29,7 +55,7 @@ export const reducer = (statePart = [], action = {}) => {
         },
       };
     }
-    case FETCH_SUCCESS: {
+    case FETCH_ALL_PRODUCTS_SUCCESS: {
       return {
         ...statePart,
         loading: {
@@ -39,7 +65,7 @@ export const reducer = (statePart = [], action = {}) => {
         data: action.payload,
       };
     }
-    case FETCH_ERROR: {
+    case FETCH_ALL_PRODUCTS_ERROR: {
       return {
         ...statePart,
         loading: {
