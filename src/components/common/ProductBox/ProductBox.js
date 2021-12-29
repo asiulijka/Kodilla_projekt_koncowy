@@ -11,22 +11,22 @@ import styles from './ProductBox.module.scss';
 import { Link } from 'react-router-dom';
 
 import { Button } from './../Button/Button';
-import { Products } from '../../features/Products/Products';
+// import { Products } from '../../features/Products/Products';
 
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
 
-const Component = ({className, _id, name, price, img1 }) => (
+const Component = ({className, _id, name, price, img1, ...props }) => (
   <div className={clsx(className, styles.root)}>
     <div className="container">
       <div className={styles.photo}>
-        <Link to='/products/:id'>
+        <Link to={`/products/${_id}`}>
           <img src={img1} alt='product main photo' />
         </Link>
       </div>
 
       <div className={styles.productName}>
-        <Link className={styles.productLink} to='/products/:id'>
+        <Link className={styles.productLink} to={`/products/${_id}`}>
           <h5>{name}</h5>
         </Link>
       </div>
@@ -40,7 +40,7 @@ const Component = ({className, _id, name, price, img1 }) => (
           Add to basket
         </Button>
 
-        <Link className='col' to='/products/:id'>
+        <Link className='col' to={`/products/${_id}`}>
           <Button className={styles.actionsButton} variant='main'>
             Check for details
           </Button>

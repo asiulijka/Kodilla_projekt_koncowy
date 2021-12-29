@@ -5,8 +5,7 @@ const Order = require('../models/order.model');
 exports.getMain = async (req, res) => {
   try {
     const result = await Product
-    .find()
-    .select('name price img1');
+    .find();
     if(!result) res.status(404).json({ product: 'Not found' });
     else res.json(result);
   }

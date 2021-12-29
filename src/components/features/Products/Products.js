@@ -6,17 +6,13 @@ import clsx from 'clsx';
 import { connect } from 'react-redux';
 import { getAll as getAllProducts } from '../../../redux/productsRedux.js';
 
-import { fetchAllProducts } from '../../../redux/productsRedux.js';
+// import { fetchAllProducts } from '../../../redux/productsRedux.js';
 
 import styles from './Products.module.scss';
 
 import { ProductBox } from '../../common/ProductBox/ProductBox';
 
-const Component = ({className, fetchAllProducts, products}) => {
-  
-  React.useEffect(() => {
-    fetchAllProducts();
-  }, []);
+const Component = ({className, products}) => {
 
   return (
     <div className={clsx(className, styles.root)}>
@@ -40,7 +36,7 @@ const Component = ({className, fetchAllProducts, products}) => {
 Component.propTypes = {
   products: PropTypes.array,
   className: PropTypes.string,
-  fetchAllProducts: PropTypes.func,
+  // fetchAllProducts: PropTypes.func,
 };
 
 const mapStateToProps = state => ({
@@ -48,7 +44,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchAllProducts: () => dispatch(fetchAllProducts()),
+  // fetchAllProducts: () => dispatch(fetchAllProducts()),
 });
 
 const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
