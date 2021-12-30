@@ -7,13 +7,15 @@ import { connect } from 'react-redux';
 import { getById } from '../../../redux/productsRedux.js';
 // import { fetchById } from '../../../redux/productsRedux.js';
 // import { fetchAllProducts } from '../../../redux/productsRedux.js';
+// import { getAll as getAllCart } from '../../../redux/cartRedux.js';
+import { addToCart } from '../../../redux/cartRedux.js';
 
 import styles from './ProductPage.module.scss';
 import { Button } from './../../common/Button/Button';
 import { QtyWidget } from './../../features/QtyWidget/QtyWidget';
 import { NotFound } from '../NotFound/NotFound.js';
 
-const Component = ({className, product }) => {
+const Component = ({className, product, _id, name, price, img1, addToCart, decoration, colours }) => {
   
   // React.useEffect(() => {
   //   fetchById(id);
@@ -22,6 +24,12 @@ const Component = ({className, product }) => {
   // React.useEffect(() => {
   //   fetchAllProducts();
   // }, []);
+
+  const handleCart = () => {
+    // console.log('handleCart');
+    // e.preventDefault();
+    addToCart({ _id, name, price, img1, decoration, colours, qty: 1 });
+  };
   
   if (product.length === 0) {
     return (
@@ -107,8 +115,8 @@ const Component = ({className, product }) => {
                 <div className={'row ' + styles.addQuantity}>
                   <p><strong>Availability:</strong> {product.availability}</p>
                   <p><strong>Choose Quantity:</strong></p>
-                  <QtyWidget className={styles.addQuantity}/>
-                  <Button className={styles.addQuantityButton} variant='main'>
+                  <QtyWidget className={styles.addQuantity} id={product._id} qty={product.qty}/>
+                  <Button className={styles.addQuantityButton} variant='main' onClick={handleCart}>
                     Add to basket
                   </Button>
                 </div>
@@ -123,11 +131,19 @@ const Component = ({className, product }) => {
   }
 };
 
-
 Component.propTypes = {
   className: PropTypes.string,
   product: PropTypes.array,
+  // cart: PropTypes.array,
   // fetchById: PropTypes.func,
+  addToCart: PropTypes.func,
+  _id: PropTypes.string,
+  name: PropTypes.string,
+  price: PropTypes.number,
+  img1: PropTypes.string,
+  // addToCart: PropTypes.func,
+  decoration: PropTypes.string,
+  colours: PropTypes.string,
 };
 
 const mapStateToProps = (state, props) => ({
@@ -138,6 +154,7 @@ const mapDispatchToProps = dispatch => ({
 //   someAction: arg => dispatch(reduxActionCreator(arg)),
   // fetchAllProducts: () => dispatch(fetchAllProducts()),
   // fetchById: id => dispatch(fetchById(id)),
+  addToCart: product => dispatch(addToCart(product)),
 });
 
 const Container = connect(mapStateToProps, mapDispatchToProps)(Component);

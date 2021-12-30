@@ -3,15 +3,15 @@ import PropTypes from 'prop-types';
 
 import clsx from 'clsx';
 
-// import { connect } from 'react-redux';
-// import { getAll as getAllCart } from '../../../redux/cartRedux.js';
+import { connect } from 'react-redux';
+import { getAll as getAllCart, clearCart} from '../../../redux/cartRedux.js';
 
 import styles from './Order.module.scss';
 
 import { Button } from './../../common/Button/Button';
 import { Link } from 'react-router-dom';
 
-const Component = ({className, children}) => (
+const Component = ({className, cart, clearCart }) => (
   <div className={clsx(className, styles.root)}>
     <h3>Your Order Summary</h3>
     
@@ -48,44 +48,21 @@ const Component = ({className, children}) => (
             </div>       
           </div>
         
-          <div className='row'>
-            <div className='col-6'>
-              <p className={styles.pProd}>Arabica Coffee Mug<br />
-              Your comment: <em>Red mug, blue logo please</em></p>
+          {cart.map(product =>(
+            <div className='row' key={product._id}>
+              <div className='col-6'>
+                <p className={styles.pProd}>{product.name}<br />
+                Your comment: <em>Red mug, blue logo please</em></p>
+              </div>
+              <div className='col-2'>
+                <p className={styles.pProd}>QTY: {product.qty}</p>
+              </div>
+              <div className='col-4'>
+                <p className={styles.pProd}>Total: $1020</p>
+              </div>
             </div>
-            <div className='col-2'>
-              <p className={styles.pProd}>QTY: 202</p>
-            </div>
-            <div className='col-4'>
-              <p className={styles.pProd}>Total: $1020</p>
-            </div>
-          </div>
+          ))}
 
-          <div className='row'>
-            <div className='col-6'>
-              <p className={styles.pProd}>Arabica Coffee Mug<br />
-              Your comment: <em>Red mug, blue logo please</em></p>
-            </div>
-            <div className='col-2'>
-              <p className={styles.pProd}>QTY: 202</p>
-            </div>
-            <div className='col-4'>
-              <p className={styles.pProd}>Total: $1020</p>
-            </div>
-          </div>
-
-          <div className='row'>
-            <div className='col-6'>
-              <p className={styles.pProd}>Arabica Coffee Mug<br />
-              Your comment: <em>Red mug, blue logo please</em></p>
-            </div>
-            <div className='col-2'>
-              <p className={styles.pProd}>QTY: 202</p>
-            </div>
-            <div className='col-4'>
-              <p className={styles.pProd}>Total: $1020</p>
-            </div>
-          </div>
 
         </div>
 
@@ -145,7 +122,7 @@ const Component = ({className, children}) => (
 
           
           <div className={styles.inputContainer}>
-            <Button variant='main'>
+            <Button variant='main' onClick={clearCart}>
               Submit
             </Button>
           </div>
@@ -163,20 +140,22 @@ const Component = ({className, children}) => (
 Component.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
+  cart: PropTypes.array,
+  clearCart: PropTypes.func,
 };
 
-// const mapStateToProps = state => ({
-//   someProp: reduxSelector(state),
-// });
+const mapStateToProps = state => ({
+  cart: getAllCart(state),
+});
 
-// const mapDispatchToProps = dispatch => ({
-//   someAction: arg => dispatch(reduxActionCreator(arg)),
-// });
+const mapDispatchToProps = dispatch => ({
+  clearCart: products => dispatch(clearCart(products)),
+});
 
-// const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
+const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
 
 export {
-  Component as Order,
-  // Container as Order,
+  // Component as Order,
+  Container as Order,
   Component as OrderComponent,
 };
