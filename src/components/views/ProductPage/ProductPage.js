@@ -25,11 +25,11 @@ const Component = ({className, product, _id, name, price, img1, addToCart, decor
   //   fetchAllProducts();
   // }, []);
 
-  const handleCart = () => {
-    // console.log('handleCart');
-    // e.preventDefault();
-    addToCart({ _id, name, price, img1, decoration, colours, qty: 1 });
-  };
+  // const handleCart = () => {
+  // console.log('handleCart');
+  // e.preventDefault();
+  //   addToCart({ _id, name, price, img1, decoration, colours, qty: 1 });
+  // };
   
   if (product.length === 0) {
     return (
@@ -73,7 +73,7 @@ const Component = ({className, product, _id, name, price, img1, addToCart, decor
                   </div>
                   <div className={'col ' + styles.productIntro}>
                     <p><strong>Price from</strong></p>
-                    <p><strong>$ {product.price}/each </strong></p>
+                    <p><strong>{`$${product.price}`}/each </strong></p>
                   </div>
                   <div className={'col ' + styles.productIntro}>
                     <Button className={styles.addQuantity} variant='main'>
@@ -115,8 +115,8 @@ const Component = ({className, product, _id, name, price, img1, addToCart, decor
                 <div className={'row ' + styles.addQuantity}>
                   <p><strong>Availability:</strong> {product.availability}</p>
                   <p><strong>Choose Quantity:</strong></p>
-                  <QtyWidget className={styles.addQuantity} id={product._id} qty={product.qty}/>
-                  <Button className={styles.addQuantityButton} variant='main' onClick={handleCart}>
+                  <QtyWidget className={styles.addQuantity} id={product._id} qty={product.qty} />
+                  <Button className={styles.addQuantityButton} variant='main' onClick={() => addToCart(product)}>
                     Add to basket
                   </Button>
                 </div>

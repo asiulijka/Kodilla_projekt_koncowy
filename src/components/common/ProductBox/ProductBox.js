@@ -22,6 +22,7 @@ const Component = ({className, _id, name, price, img1, addToCart, decoration, co
     // console.log('handleCart');
     // e.preventDefault();
     addToCart({ _id, name, price, img1, decoration, colours, qty: 1 });
+    // addToCart({ _id, name, price, img1, decoration, colours });
   };
 
 

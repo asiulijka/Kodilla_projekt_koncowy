@@ -15,7 +15,19 @@ import { Link } from 'react-router-dom';
 
 const Component = ({className, cart, removeFromCart }) => {
 
+  const calculateSubtotal = cart => {
+    let subtotal = 0;
+    for (const product of cart) {
+      subtotal += product.price * product.qty;
+    }
+    return subtotal;
+  };
 
+  const calculateGst = calculateSubtotal * 0.1;
+
+  const calculateTotal = cart => {
+    return cart.length == 0 ? 0 : calculateSubtotal(cart) + 20;
+  };
 
   return(
     <div className={clsx(className, styles.root)}>
@@ -30,7 +42,7 @@ const Component = ({className, cart, removeFromCart }) => {
             </div>
             <div className={'col-3 ' + styles.description}>
               <p><strong>{product.name}</strong></p>
-              <p className={styles.pInfo}>Price from $ {product.price}/each</p>
+              <p className={styles.pInfo}>Price from {`$${product.price}`}/each</p>
               <p className={styles.pInfo}>Available colours: {product.colours}</p>
               <p className={styles.pInfo}>Decoration method: {product.decoration}</p>
             </div>
@@ -47,7 +59,7 @@ const Component = ({className, cart, removeFromCart }) => {
                     <strong>Total price</strong>
                   </p>
                   <p className={styles.pPrice}>
-                    <strong>$1010</strong>
+                    <strong>{`$${product.price * product.qty}`}</strong>
                   </p>
                 </div>
 
@@ -105,10 +117,10 @@ const Component = ({className, cart, removeFromCart }) => {
           </div>
   
           <div className={'col-2 ' + styles.values}>
-            <p className={styles.pOrder}>$22</p>
-            <p className={styles.pOrder}>$2</p>
-            <p className={styles.pOrderLast}>TBC</p>
-            <p><strong>$222</strong></p>
+            <p className={styles.pOrder}>${calculateSubtotal(cart)}</p>
+            <p className={styles.pOrder}>${calculateGst}</p>
+            <p className={styles.pOrderLast}>$20</p>
+            <p><strong>${calculateTotal(cart)}</strong></p>
           </div>
           
           <div className='col-1'></div>
@@ -142,6 +154,7 @@ Component.propTypes = {
   // _id: PropTypes.string,
   cart: PropTypes.array,
   removeFromCart: PropTypes.func,
+  // products: PropTypes.array,
 };
 
 const mapStateToProps = state => ({
