@@ -59,11 +59,25 @@
       padding-left: $base-padding;
     }
 
+
     .comment {
-      border: 1px solid $font-color-header;
-      border-radius: 7px;
+      // border: 1px solid $font-color-header;
+      // border-radius: 7px;
       margin-left: $base-padding;
       font-size: $base-size;
+      padding: 0;
+      color: $font-color-text;
+      // background-color: $color-light-grey;
+      // background-color: red;
+
+      .commentForm {
+        width: -webkit-fill-available;
+        border: 1px solid $font-color-header;
+        border-radius: 7px;
+        // color: $font-color-text;
+        background-color: $color-light-grey;
+      }
+
     }
 
     .itemButton {

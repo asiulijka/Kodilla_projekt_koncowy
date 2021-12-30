@@ -21,6 +21,12 @@
   // text-transform: uppercase;
   // transition: all 0.5s;
   // margin: 0;
+
+  &:hover {
+    background: radial-gradient($color-main 40%, $color-main-dark);
+    // background-color: $color-main-dark;
+    // background: linear-gradient($color-main-dark, 10%, $color-main, 90%, $color-main-dark);
+  }
 }
 
 .quantityChange {
@@ -29,6 +35,12 @@
   // color: $color-main-dark;
   font-weight: 700;
   line-height: 1;
+
+  &:hover {
+    background: radial-gradient($font-color-header, $font-color-header-dark);
+    // background-color: $color-main-dark;
+    // background: linear-gradient($color-main-dark, 10%, $color-main, 90%, $color-main-dark);
+  }
 }
 
 .cartGrey {
@@ -38,11 +50,24 @@
   border: 1px solid $font-color-text;
   color: $font-color-text;
   font-weight: 500;
+
+  &:hover {
+    background: radial-gradient($color-main, $font-color-text);
+    color: $color-light-grey;
+    // background-color: $color-main-dark;
+    // background: linear-gradient($color-main-dark, 10%, $color-main, 90%, $color-main-dark);
+  }
 }
 
 .update {
   @extend .main;
   background-color: $font-color-header;
+
+  &:hover {
+    background: radial-gradient($font-color-header, $font-color-header-dark);
+    // background-color: $color-main-dark;
+    // background: linear-gradient($color-main-dark, 10%, $color-main, 90%, $color-main-dark);
+  }
 }
 
 .small {

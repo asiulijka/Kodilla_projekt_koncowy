@@ -50,7 +50,13 @@ const Component = ({className, children}) => (
               {/* <form>
                 <input type="text" value="Add your branding comments here"></input>
               </form> */}
-              Add your branding comments/requirenments here
+              {/* Add your branding comments/requirenments here */}
+              <textarea
+                placeholder="Add your branding comments/requirenments here"
+                name="message"
+                className={styles.commentForm}
+                required
+              />
             </div>
           
           </div>
@@ -110,7 +116,13 @@ const Component = ({className, children}) => (
               {/* <form>
                 <input type="text" value="Add your branding comments here"></input>
               </form> */}
-              Add your branding comments/requirenments here
+              {/* Add your branding comments/requirenments here */}
+              <textarea
+                placeholder="Add your branding comments/requirenments here"
+                name="message"
+                className={styles.commentForm}
+                required
+              />
             </div>
           </div>
         </div>

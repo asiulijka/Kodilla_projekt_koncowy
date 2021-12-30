@@ -10,8 +10,9 @@
       min-height: 80%;
       position: relative;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: center;
+      padding-top: $base-padding*0.5;
 
       .photo {
         max-width: 100%;
@@ -31,7 +32,7 @@
       // display: flex;
       min-height: 20%;
       // position: relative;
-      // justify-content: space-evenly;
+      justify-content: space-between;
       // background-color: $font-color-text;
   
       .photoContainerMini {

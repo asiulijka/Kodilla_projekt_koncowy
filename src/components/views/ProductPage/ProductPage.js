@@ -41,16 +41,16 @@ const Component = ({className, product }) => {
   
               <div className={'row ' + styles.sliderBox}>
                 <div className={'col-2 ' + styles.photoContainerMini}>
-                  <img className={styles.photoMini} src={'https://primopromo.com.au/assets/Uploads/Products/d1ae502f58/Arabica-Coffee-Mug+Red.jpg'} alt='' />
+                  <img className={styles.photoMini} src={product.img2} alt='' />
                 </div>
                 <div className={'col-2 ' + styles.photoContainerMini}>
-                  <img className={styles.photoMini} src={'https://primopromo.com.au/assets/Uploads/Products/292be3bbba/Arabica-Coffee-Mug+Green.jpg'} alt='' />
+                  <img className={styles.photoMini} src={product.img3} alt='' />
                 </div>
                 <div className={'col-2 ' + styles.photoContainerMini}>
-                  <img className={styles.photoMini} src={'https://primopromo.com.au/assets/Uploads/Products/5a8de58c0e/Arabica-Coffee-Mug+Dark-Blue.jpg'} alt='' />
+                  <img className={styles.photoMini} src={product.img4} alt='' />
                 </div>
                 <div className={'col-2 ' + styles.photoContainerMini}>
-                  <img className={styles.photoMini} src={'https://primopromo.com.au/assets/Uploads/Products/2e18cf5e38/Arabica-Coffee-Mug+White.jpg'} alt='' />
+                  <img className={styles.photoMini} src={product.img5} alt='' />
                 </div>
               </div>
             </div>
@@ -65,7 +65,7 @@ const Component = ({className, product }) => {
                   </div>
                   <div className={'col ' + styles.productIntro}>
                     <p><strong>Price from</strong></p>
-                    <p><strong>$5.00/each </strong></p>
+                    <p><strong>$ {product.price}/each </strong></p>
                   </div>
                   <div className={'col ' + styles.productIntro}>
                     <Button className={styles.addQuantity} variant='main'>
@@ -77,35 +77,35 @@ const Component = ({className, product }) => {
   
               <div className={'container ' + styles.productInfoContainer}>
                 <div className='row'>
-                  <p><strong>Category:</strong> Mugs and cups</p>
+                  <p><strong>Category:</strong> {product.category}</p>
                 </div>
               </div>
   
               <div className={'container ' + styles.productInfoContainer}>
                 <p className={styles.overview}><strong>Description</strong></p>
                 <p className={styles.description}>
-                Classic round 330mL stoneware coffee mug. The inside of the mug is white and out of the mug is one colour (yellow, green, dark blue, white or red). This product is not dishwasher safe and handwashing is recommended.
+                  {product.description}
                 </p>
               </div>
   
               <div className={'container ' + styles.productInfoContainer}>
                 <p className={styles.overview}><strong>Dimentions: </strong></p>
-                <p>Dia 81mm x H 95mm x 120mm (includes handle)</p>
+                <p>{product.dimentions}</p>
               </div>
   
               <div className={'container ' + styles.productInfoContainer}>
                 <p className={styles.overview}><strong>Colours: </strong></p>
-                <p>Yellow, Green, Red, White, Dark Blue</p>
+                <p>{product.colours}</p>
               </div>
   
               <div className={'container ' + styles.decoration}>
                 <p className={styles.overview}><strong>Decoration method: </strong></p>
-                <p>Pad Print 50mm x 50mm</p>
+                <p>{product.decoration}</p>
               </div>
   
               <div className={'container ' + styles.productInfoContainer}>
                 <div className={'row ' + styles.addQuantity}>
-                  <p><strong>Availability:</strong> In Stock</p>
+                  <p><strong>Availability:</strong> {product.availability}</p>
                   <p><strong>Choose Quantity:</strong></p>
                   <ChooseQty className={styles.addQuantity}/>
                   <Button className={styles.addQuantityButton} variant='main'>
