@@ -13,7 +13,7 @@ import styles from './Button.module.scss';
 
 
 
-const Component = ({variant='', className, children}) => {
+const Component = ({variant='', className, onClick, children}) => {
 
   // const classes = [];
 
@@ -29,6 +29,7 @@ const Component = ({variant='', className, children}) => {
       <button 
         // {...otherProps} 
         className={styles.component + variant.split(' ').map(name => ' ' + (styles[name] || name)).join('')} 
+        onClick={onClick}
       >
         {children}
       </button>
@@ -43,6 +44,7 @@ Component.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   variant: PropTypes.string,
+  onClick: PropTypes.func,
 };
 
 // const mapStateToProps = state => ({

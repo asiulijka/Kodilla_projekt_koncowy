@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 import clsx from 'clsx';
 
-// import { connect } from 'react-redux';
-// import { reduxSelector, reduxActionCreator } from '../../../redux/exampleRedux.js';
+import { connect } from 'react-redux';
+import { addToCart } from '../../../redux/cartRedux.js';
 
 import styles from './ProductBox.module.scss';
 
@@ -16,40 +16,51 @@ import { Button } from './../Button/Button';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
 
-const Component = ({className, _id, name, price, img1, ...props }) => (
-  <div className={clsx(className, styles.root)}>
-    <div className="container">
-      <div className={styles.photo}>
-        <Link to={`/products/${_id}`}>
-          <img src={img1} alt='product main photo' />
-        </Link>
-      </div>
+const Component = ({className, _id, name, price, img1, addToCart, decoration, colours }) => {
 
-      <div className={styles.productName}>
-        <Link className={styles.productLink} to={`/products/${_id}`}>
-          <h5>{name}</h5>
-        </Link>
-      </div>
+  const handleCart = () => {
+    console.log('handleCart');
+    // e.preventDefault();
+    addToCart({ _id, name, price, img1, decoration, colours });
+  };
 
-      <div className={styles.price}>
-        <p>Price from $ {price}</p>
-      </div>
 
-      <div className={'row ' + styles.actions}>
-        <Button className={'col ' + styles.actionsButton} variant='main'>
-          Add to basket
-        </Button>
+  return(
+    <div className={clsx(className, styles.root)}>
+      <div className="container">
+        <div className={styles.photo}>
+          <Link to={`/products/${_id}`}>
+            <img src={img1} alt='product main photo' />
+          </Link>
+        </div>
 
-        <Link className='col' to={`/products/${_id}`}>
-          <Button className={styles.actionsButton} variant='main'>
-            Check for details
+        <div className={styles.productName}>
+          <Link className={styles.productLink} to={`/products/${_id}`}>
+            <h5>{name}</h5>
+          </Link>
+        </div>
+
+        <div className={styles.price}>
+          <p>Price from {`$${price}`}</p>
+        </div>
+
+        <div className={'row ' + styles.actions}>
+          <Button className={styles.actionsButton} variant='main' onClick={handleCart}>
+            Add to basket
           </Button>
-        </Link>
-      </div>
 
+          <Link className='col' to={`/products/${_id}`}>
+            <Button className={styles.actionsButton} variant='main'>
+              Check for details
+            </Button>
+          </Link>
+        </div>
+
+      </div>
     </div>
-  </div>
-);
+  );
+
+};
 
 Component.propTypes = {
   className: PropTypes.string,
@@ -57,20 +68,23 @@ Component.propTypes = {
   name: PropTypes.string,
   price: PropTypes.number,
   img1: PropTypes.string,
+  addToCart: PropTypes.func,
+  decoration: PropTypes.string,
+  colours: PropTypes.string,
 };
 
-// const mapStateToProps = state => ({
-//   someProp: reduxSelector(state),
-// });
+const mapStateToProps = state => ({
+  // someProp: reduxSelector(state),
+});
 
-// const mapDispatchToProps = dispatch => ({
-//   someAction: arg => dispatch(reduxActionCreator(arg)),
-// });
+const mapDispatchToProps = dispatch => ({
+  addToCart: product => dispatch(addToCart(product)),
+});
 
-// const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
+const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
 
 export {
-  Component as ProductBox,
-  // Container as ProductBox,
+  // Component as ProductBox,
+  Container as ProductBox,
   Component as ProductBoxComponent,
 };

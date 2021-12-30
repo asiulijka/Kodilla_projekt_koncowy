@@ -6,7 +6,7 @@ export const initialState = {
       error: false,
     },
   },
-  orders: {
+  cart: {
     data: [],
     loading: {
       active: false,
