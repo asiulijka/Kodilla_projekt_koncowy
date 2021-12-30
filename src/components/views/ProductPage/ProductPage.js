@@ -10,7 +10,7 @@ import { getById } from '../../../redux/productsRedux.js';
 
 import styles from './ProductPage.module.scss';
 import { Button } from './../../common/Button/Button';
-import { ChooseQty } from './../../features/ChooseQty/ChooseQty';
+import { QtyWidget } from './../../features/QtyWidget/QtyWidget';
 import { NotFound } from '../NotFound/NotFound.js';
 
 const Component = ({className, product }) => {
@@ -107,7 +107,7 @@ const Component = ({className, product }) => {
                 <div className={'row ' + styles.addQuantity}>
                   <p><strong>Availability:</strong> {product.availability}</p>
                   <p><strong>Choose Quantity:</strong></p>
-                  <ChooseQty className={styles.addQuantity}/>
+                  <QtyWidget className={styles.addQuantity}/>
                   <Button className={styles.addQuantityButton} variant='main'>
                     Add to basket
                   </Button>

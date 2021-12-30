@@ -93,30 +93,41 @@ export const reducer = (statePart = [], action = {}) => {
         data: [...statePart.data, action.payload],
       };
     }
-    // case REMOVE_FROM_CART: {
-    //   return {
-    //     ...statePart,
-    //     data: statePart.data.filter(item => item._id ==! action.payload),
-    //   };
-    // }
-    // case CLEAR_CART: {
-    //   return {
-    //     ...statePart,
-    //     data: [],
-    //   };
-    // }
-    // case QTY_UP: {
-    //   return {
-    //     ...statePart,
-    //     data: statePart.data.push(action.payload),
-    //   };
-    // }
-    // case QTY_DOWN: {
-    //   return {
-    //     ...statePart,
-    //     data: statePart.data.push(action.payload),
-    //   };
-    // }
+    case REMOVE_FROM_CART: {
+      // console.log(action.payload);
+      return {
+        ...statePart,
+        data: [...statePart.data.filter(product => product._id !== action.payload)],
+      };
+    }
+    case CLEAR_CART: {
+      return {
+        ...statePart,
+        data: [],
+      };
+    }
+    case QTY_UP: {
+      return {
+        ...statePart,
+        data: statePart.data.map(e => e._id === action.payload ? 
+          {
+            ...e,
+            qty: e.qty + 1,
+          }
+          : e ),
+      };
+    }
+    case QTY_DOWN: {
+      return {
+        ...statePart,
+        data: statePart.data.map(e => e._id === action.payload ? 
+          {
+            ...e,
+            qty: e.qty > 1 ? e.qty - 1 : e.qty,
+          }
+          : e ),
+      };
+    }
     // case ADD_TO_CART_START: {
     //   return {
     //     ...statePart,

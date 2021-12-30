@@ -19,9 +19,9 @@ import { Button } from './../Button/Button';
 const Component = ({className, _id, name, price, img1, addToCart, decoration, colours }) => {
 
   const handleCart = () => {
-    console.log('handleCart');
+    // console.log('handleCart');
     // e.preventDefault();
-    addToCart({ _id, name, price, img1, decoration, colours });
+    addToCart({ _id, name, price, img1, decoration, colours, qty: 1 });
   };
 
 

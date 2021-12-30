@@ -1,10 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { ChooseQtyComponent } from './ChooseQty';
+import { QtyWidgetComponent } from './QtyWidget';
 
-describe('Component ChooseQty', () => {
+describe('Component QtyWidget', () => {
   it('should render without crashing', () => {
-    const component = shallow(<ChooseQtyComponent />);
+    const component = shallow(<QtyWidgetComponent />);
     expect(component).toBeTruthy();
   });
 });
