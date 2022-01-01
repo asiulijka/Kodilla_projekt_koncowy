@@ -14,6 +14,11 @@ import { Link } from 'react-router-dom';
 
 const Component = ({className, cart, clearCart }) => {
 
+  const [customerName, setCustomerName] = React.useState('');
+  const [customerEmail, setCustomerEmail] = React.useState('');
+  const [customerPhone, setCustomerPhone] = React.useState('');
+  const [customerMessage, setCustomerMessage] = React.useState('');
+
   return (
     <div className={clsx(className, styles.root)}>
       <h3>Your Order Summary</h3>
@@ -55,7 +60,7 @@ const Component = ({className, cart, clearCart }) => {
               <div className='row' key={product._id}>
                 <div className='col-6'>
                   <p className={styles.pProd}>{product.name}<br />
-                  Your comment: <em>Red mug, blue logo please</em></p>
+                  Your comment: <em>{product.comment ? product.comment : 'No comment'}</em></p>
                 </div>
                 <div className='col-2'>
                   <p className={styles.pProd}>QTY: {product.qty}</p>
@@ -91,6 +96,7 @@ const Component = ({className, cart, clearCart }) => {
                 name="name"
                 className={styles.inputForm}
                 required
+                onChange={event => setCustomerName(event.target.value)}
               />
             </div>
 
@@ -101,6 +107,7 @@ const Component = ({className, cart, clearCart }) => {
                 name="email"
                 className={styles.inputForm}
                 required
+                onChange={event => setCustomerEmail(event.target.value)}
               />
             </div>
 
@@ -111,6 +118,7 @@ const Component = ({className, cart, clearCart }) => {
                 name="phone"
                 className={styles.inputForm}
                 required
+                onChange={event => setCustomerPhone(event.target.value)}
               />
             </div>
 
@@ -119,7 +127,7 @@ const Component = ({className, cart, clearCart }) => {
                 placeholder="Your message"
                 name="message"
                 className={styles.inputForm}
-                required
+                onChange={event => setCustomerMessage(event.target.value)}
               />
             </div>
 
