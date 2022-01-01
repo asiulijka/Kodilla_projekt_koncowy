@@ -4,30 +4,17 @@ import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
 import { connect } from 'react-redux';
-import { getAll as getAllCart, removeFromCart } from '../../../redux/cartRedux.js';
+import { getAll as getAllCart, removeFromCart, changeComment } from '../../../redux/cartRedux.js';
 // import { reduxSelector, reduxActionCreator } from '../../../redux/exampleRedux.js';
 
 import styles from './Cart.module.scss';
+import { calculateSubtotal, calculateGst, calculateTotal, calculateDelivery } from '../../../utils/commonFunctions.js';
 
 import { Button } from './../../common/Button/Button';
 import { QtyWidget } from '../../features/QtyWidget/QtyWidget';
 import { Link } from 'react-router-dom';
 
-const Component = ({className, cart, removeFromCart }) => {
-
-  const calculateSubtotal = cart => {
-    let subtotal = 0;
-    for (const product of cart) {
-      subtotal += product.price * product.qty;
-    }
-    return subtotal;
-  };
-
-  const calculateGst = calculateSubtotal * 0.1;
-
-  const calculateTotal = cart => {
-    return cart.length == 0 ? 0 : calculateSubtotal(cart) + 20;
-  };
+const Component = ({className, cart, removeFromCart, changeComment}) => {
 
   return(
     <div className={clsx(className, styles.root)}>
@@ -36,7 +23,7 @@ const Component = ({className, cart, removeFromCart }) => {
       <div className='container'>
 
         {cart.map(product => (
-          <div className={'row ' + styles.productContainer} key={product._id}>
+          <div className={'row ' + styles.productContainer} key={product.cartId}>
             <div className={'col-2 ' + styles.photo}>
               <img src={product.img1} alt='product main photo' />
             </div>
@@ -52,7 +39,7 @@ const Component = ({className, cart, removeFromCart }) => {
                   <p className={styles.pMain}>
                     <strong>Choose quantity</strong>
                   </p>
-                  <QtyWidget id={product._id} qty={product.qty} />
+                  <QtyWidget id={product.cartId} qty={product.qty} />
                 </div>
                 <div className={'col-4 ' + styles.description}>
                   <p className={styles.pMain}>
@@ -73,6 +60,11 @@ const Component = ({className, cart, removeFromCart }) => {
                     name="message"
                     className={styles.commentForm}
                     required
+                    onChange={event => changeComment(
+                      {
+                        comment: event.target.value, 
+                        id: product.cartId,
+                      })}
                   />
                 </div>
               
@@ -82,7 +74,7 @@ const Component = ({className, cart, removeFromCart }) => {
 
             {/* <div className={'col-4 ' + styles.pInfo}> */}
             <div className={'col-2 ' + styles.itemButton}> 
-              <Button variant='cartGrey' onClick={() => removeFromCart(product._id)}>
+              <Button variant='cartGrey' onClick={() => removeFromCart(product.cartId)}>
                 Remove product
               </Button>
               {/* </div> */}
@@ -93,11 +85,6 @@ const Component = ({className, cart, removeFromCart }) => {
                 </Button>
               </Link>
 
-              {/* </div> */}
-              {/* <div className='col-4'> */}
-              <Button variant='update'>
-                Update basket
-              </Button>
             </div>
           </div>
         ))}
@@ -117,10 +104,10 @@ const Component = ({className, cart, removeFromCart }) => {
           </div>
   
           <div className={'col-2 ' + styles.values}>
-            <p className={styles.pOrder}>${calculateSubtotal(cart)}</p>
-            <p className={styles.pOrder}>${calculateGst}</p>
-            <p className={styles.pOrderLast}>$20</p>
-            <p><strong>${calculateTotal(cart)}</strong></p>
+            <p className={styles.pOrder}>${calculateSubtotal(cart).toFixed(2)}</p>
+            <p className={styles.pOrder}>${calculateGst(cart).toFixed(2)}</p>
+            <p className={styles.pOrderLast}>${calculateDelivery(cart).toFixed(2)}</p>
+            <p><strong>${calculateTotal(cart).toFixed(2)}</strong></p>
           </div>
           
           <div className='col-1'></div>
@@ -155,6 +142,7 @@ Component.propTypes = {
   cart: PropTypes.array,
   removeFromCart: PropTypes.func,
   // products: PropTypes.array,
+  changeComment: PropTypes.func,
 };
 
 const mapStateToProps = state => ({
@@ -163,6 +151,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   removeFromCart: id => dispatch(removeFromCart(id)),
+  changeComment: commentInfo => dispatch(changeComment(commentInfo)),
 });
 
 const Container = connect(mapStateToProps, mapDispatchToProps)(Component); 

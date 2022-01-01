@@ -17,6 +17,7 @@ const REMOVE_FROM_CART = createActionName('REMOVE_FROM_CART');
 const CLEAR_CART = createActionName('CLEAR_CART');
 const QTY_UP = createActionName('QTY_UP');
 const QTY_DOWN = createActionName('QTY_DOWN');
+const CHANGE_COMMENT = createActionName('CHANGE_COMMENT');
 
 
 // const ADD_TO_CART_START = createActionName('ADD_TO_CART_START');
@@ -33,6 +34,7 @@ export const removeFromCart = payload => ({ payload, type: REMOVE_FROM_CART });
 export const clearCart = payload => ({ payload, type: CLEAR_CART });
 export const qtyUp = payload => ({ payload, type: QTY_UP });
 export const qtyDown = payload => ({ payload, type: QTY_DOWN });
+export const changeComment = payload => ({ payload, type: CHANGE_COMMENT });
 
 // export const addToCartStarted = payload => ({ payload, type: ADD_TO_CART_START });
 // export const addToCartSuccess = payload => ({ payload, type: ADD_TO_CART_SUCCESS });
@@ -97,7 +99,7 @@ export const reducer = (statePart = [], action = {}) => {
       // console.log(action.payload);
       return {
         ...statePart,
-        data: [...statePart.data.filter(product => product._id !== action.payload)],
+        data: [...statePart.data.filter(product => product.cartId !== action.payload)],
       };
     }
     case CLEAR_CART: {
@@ -109,23 +111,34 @@ export const reducer = (statePart = [], action = {}) => {
     case QTY_UP: {
       return {
         ...statePart,
-        data: statePart.data.map(e => e._id === action.payload ? 
+        data: statePart.data.map(product => product.cartId === action.payload ? 
           {
-            ...e,
-            qty: e.qty + 1,
+            ...product,
+            qty: product.qty + 1,
           }
-          : e ),
+          : product ),
       };
     }
     case QTY_DOWN: {
       return {
         ...statePart,
-        data: statePart.data.map(e => e._id === action.payload ? 
+        data: statePart.data.map(product => product.cartId === action.payload ? 
           {
-            ...e,
-            qty: e.qty > 1 ? e.qty - 1 : e.qty,
+            ...product,
+            qty: product.qty > 1 ? product.qty - 1 : product.qty,
           }
-          : e ),
+          : product ),
+      };
+    }
+    case CHANGE_COMMENT: {
+      return {
+        ...statePart,
+        data: statePart.data.map(product => product.cartId === action.payload.id ? 
+          {
+            ...product,
+            comment: action.payload.comment,
+          }
+          : product ),
       };
     }
     // case ADD_TO_CART_START: {

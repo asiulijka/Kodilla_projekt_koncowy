@@ -5,6 +5,7 @@ import clsx from 'clsx';
 
 import { connect } from 'react-redux';
 import { getAll as getAllCart, clearCart} from '../../../redux/cartRedux.js';
+import { calculateSubtotal, calculateGst, calculateTotal, calculateDelivery } from '../../../utils/commonFunctions.js';
 
 import styles from './Order.module.scss';
 
@@ -12,20 +13,6 @@ import { Button } from './../../common/Button/Button';
 import { Link } from 'react-router-dom';
 
 const Component = ({className, cart, clearCart }) => {
-
-  const calculateSubtotal = cart => {
-    let subtotal = 0;
-    for (const product of cart) {
-      subtotal += product.price * product.qty;
-    }
-    return subtotal;
-  };
-
-  const calculateGst = calculateSubtotal * 0.1;
-
-  const calculateTotal = cart => {
-    return cart.length == 0 ? 0 : calculateSubtotal(cart) + 20;
-  };
 
   return (
     <div className={clsx(className, styles.root)}>
@@ -42,10 +29,10 @@ const Component = ({className, cart, clearCart }) => {
           </div>
 
           <div className={'col-1 ' + styles.values}>
-            <p className={styles.pOrder}>${calculateSubtotal(cart)}</p>
-            <p className={styles.pOrder}>${calculateGst}</p>
-            <p className={styles.pOrderLast}>$20</p>
-            <p className={styles.pTotal}><strong>${calculateTotal(cart)}</strong></p>
+            <p className={styles.pOrder}>${calculateSubtotal(cart).toFixed(2)}</p>
+            <p className={styles.pOrder}>${calculateGst(cart).toFixed(2)}</p>
+            <p className={styles.pOrderLast}>${calculateDelivery(cart).toFixed(2)}</p>
+            <p className={styles.pTotal}><strong>${calculateTotal(cart).toFixed(2)}</strong></p>
           </div>
 
           <div className='col-2'></div>

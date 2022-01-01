@@ -16,12 +16,14 @@ import { Button } from './../Button/Button';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
 
+import short from 'short-uuid';
+
 const Component = ({className, _id, name, price, img1, addToCart, decoration, colours }) => {
 
   const handleCart = () => {
     // console.log('handleCart');
     // e.preventDefault();
-    addToCart({ _id, name, price, img1, decoration, colours, qty: 1 });
+    addToCart({ _id, name, price, img1, decoration, colours, qty: 1, cartId: short.uuid() });
     // addToCart({ _id, name, price, img1, decoration, colours });
   };
 

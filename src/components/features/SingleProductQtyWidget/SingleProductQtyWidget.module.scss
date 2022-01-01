@@ -1,0 +1,74 @@
+@import '../../../styles/settings.scss';
+
+.root {
+
+  .freeze {
+    // position: absolute;
+    // width: -webkit-fill-available;
+
+    .buttonContainer {
+      // padding: 0 3px;
+        // margin-top: $base-padding*0.25;
+        // margin-bottom: $base-padding*0.25;
+        padding: 0;
+        margin: 0;
+        width: $base-padding*1.5;
+        // position: relative;
+        // text-align-last: end;
+        // width: -webkit-fill-available;
+        // font: red;
+      }
+
+      // .buttonNegative {
+        // @extend .buttonContainer;
+        // text-align-last: end;
+        // width: -webkit-fill-available;
+      // }
+
+      // .button {
+        // width: -webkit-fill-available;
+        // position: absolute;
+        // height: inherit;
+        // width: 100%;
+      //   text-align: justify;
+        // padding: 0;
+        
+      // }
+
+      // .buttonPositive {
+      //   margin: $base-padding*0.25 0;
+      //   padding: 0;
+      // }
+
+      .quantity {
+        @extend .buttonContainer;
+        padding: $base-padding*0.2 $base-padding;
+        border: 1px solid $font-color-header;
+        border-radius: 7px;
+        // margin-right: 3px;
+        // margin-left: 25px;
+        // margin: 0;
+        // align-self: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        margin-left: -($base-padding*0.25);
+        
+      }
+
+      .innerButton {
+        // width: 100%;
+        // width: -webkit-fill-available;
+        // position: absolute;
+        // width: inherit;
+        // width: 100%;
+        // text-align: justify;
+        font: red;
+      }
+  }
+
+
+
+}
+

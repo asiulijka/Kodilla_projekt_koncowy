@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useHistory } from 'react-router-dom';
 
 import clsx from 'clsx';
 
@@ -12,24 +13,18 @@ import { addToCart } from '../../../redux/cartRedux.js';
 
 import styles from './ProductPage.module.scss';
 import { Button } from './../../common/Button/Button';
-import { QtyWidget } from './../../features/QtyWidget/QtyWidget';
+import { SingleProductQtyWidget } from './../../features/SingleProductQtyWidget/SingleProductQtyWidget';
 import { NotFound } from '../NotFound/NotFound.js';
 
 const Component = ({className, product, _id, name, price, img1, addToCart, decoration, colours }) => {
+
+  const [productQty, setProductQty] = React.useState(1);
   
-  // React.useEffect(() => {
-  //   fetchById(id);
-  // }, []);
+  const history = useHistory();
 
-  // React.useEffect(() => {
-  //   fetchAllProducts();
-  // }, []);
-
-  // const handleCart = () => {
-  // console.log('handleCart');
-  // e.preventDefault();
-  //   addToCart({ _id, name, price, img1, decoration, colours, qty: 1 });
-  // };
+  function redirectToHomePage() {
+    history.push('/');
+  }
   
   if (product.length === 0) {
     return (
@@ -115,8 +110,22 @@ const Component = ({className, product, _id, name, price, img1, addToCart, decor
                 <div className={'row ' + styles.addQuantity}>
                   <p><strong>Availability:</strong> {product.availability}</p>
                   <p><strong>Choose Quantity:</strong></p>
-                  <QtyWidget className={styles.addQuantity} id={product._id} qty={product.qty} />
-                  <Button className={styles.addQuantityButton} variant='main' onClick={() => addToCart(product)}>
+
+                  <SingleProductQtyWidget 
+                    className={styles.addQuantity} 
+                    qty={productQty} 
+                    qtyUp={() => setProductQty(productQty + 1)} 
+                    qtyDown={() => setProductQty(productQty > 1 ? productQty - 1 : 1)} 
+                  />
+
+                  <Button 
+                    className={styles.addQuantityButton} 
+                    variant='main' 
+                    onClick={() => {
+                      addToCart({...product, qty: productQty});
+                      redirectToHomePage();
+                    }}
+                  >
                     Add to basket
                   </Button>
                 </div>
