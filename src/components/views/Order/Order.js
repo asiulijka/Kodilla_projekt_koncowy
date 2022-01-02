@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
 import { connect } from 'react-redux';
-import { getAll as getAllCart, clearCart} from '../../../redux/cartRedux.js';
+import { getAll as getAllCart, sendOrder } from '../../../redux/cartRedux.js';
 import { calculateSubtotal, calculateGst, calculateTotal, calculateDelivery } from '../../../utils/commonFunctions.js';
 
 import styles from './Order.module.scss';
@@ -12,12 +12,23 @@ import styles from './Order.module.scss';
 import { Button } from './../../common/Button/Button';
 import { Link } from 'react-router-dom';
 
-const Component = ({className, cart, clearCart }) => {
+const Component = ({className, cart, sendOrder }) => {
 
   const [customerName, setCustomerName] = React.useState('');
   const [customerEmail, setCustomerEmail] = React.useState('');
   const [customerPhone, setCustomerPhone] = React.useState('');
   const [customerMessage, setCustomerMessage] = React.useState('');
+
+  const handleOrder = () => {
+    const payload = {
+      cart,
+      customerName,
+      customerEmail,
+      customerPhone,
+      customerMessage,
+    };
+    sendOrder(payload);
+  };
 
   return (
     <div className={clsx(className, styles.root)}>
@@ -133,7 +144,7 @@ const Component = ({className, cart, clearCart }) => {
 
             
             <div className={styles.inputContainer}>
-              <Button variant='main' onClick={clearCart}>
+              <Button variant='main' onClick={handleOrder}>
                 Submit
               </Button>
             </div>
@@ -153,7 +164,7 @@ Component.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
   cart: PropTypes.array,
-  clearCart: PropTypes.func,
+  sendOrder: PropTypes.func,
 };
 
 const mapStateToProps = state => ({
@@ -161,7 +172,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  clearCart: products => dispatch(clearCart(products)),
+  sendOrder: orderDetails => dispatch(sendOrder(orderDetails)),
 });
 
 const Container = connect(mapStateToProps, mapDispatchToProps)(Component);

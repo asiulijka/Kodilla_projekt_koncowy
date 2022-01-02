@@ -65,6 +65,7 @@ const Component = ({className, cart, removeFromCart, changeComment}) => {
                         comment: event.target.value, 
                         id: product.cartId,
                       })}
+                    value={product.comment ? product.comment : ''}
                   />
                 </div>
               

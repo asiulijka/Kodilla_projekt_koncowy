@@ -1,4 +1,4 @@
-// import Axios from 'axios';
+import Axios from 'axios';
 
 /* selectors */
 export const getAll = ({cart}) => cart.data;
@@ -14,15 +14,16 @@ const FETCH_ERROR = createActionName('FETCH_ERROR');
 
 const ADD_TO_CART = createActionName('ADD_TO_CART');
 const REMOVE_FROM_CART = createActionName('REMOVE_FROM_CART');
-const CLEAR_CART = createActionName('CLEAR_CART');
+// const CLEAR_CART = createActionName('CLEAR_CART');
 const QTY_UP = createActionName('QTY_UP');
 const QTY_DOWN = createActionName('QTY_DOWN');
 const CHANGE_COMMENT = createActionName('CHANGE_COMMENT');
+// const SEND_ORDER = createActionName('SEND_ORDER');
 
 
-// const ADD_TO_CART_START = createActionName('ADD_TO_CART_START');
-// const ADD_TO_CART_SUCCESS = createActionName('ADD_TO_CART_SUCCESS');
-// const ADD_TO_CART_ERROR = createActionName('ADD_TO_CART_ERROR');
+const SEND_ORDER_START = createActionName('SEND_ORDER_START');
+const SEND_ORDER_SUCCESS = createActionName('SEND_ORDER_SUCCESS');
+const SEND_ORDER_ERROR = createActionName('SEND_ORDER_ERROR');
 
 /* action creators */
 export const fetchStarted = payload => ({ payload, type: FETCH_START });
@@ -31,30 +32,31 @@ export const fetchError = payload => ({ payload, type: FETCH_ERROR });
 
 export const addToCart = payload => ({ payload, type: ADD_TO_CART });
 export const removeFromCart = payload => ({ payload, type: REMOVE_FROM_CART });
-export const clearCart = payload => ({ payload, type: CLEAR_CART });
+// export const clearCart = payload => ({ payload, type: CLEAR_CART });
 export const qtyUp = payload => ({ payload, type: QTY_UP });
 export const qtyDown = payload => ({ payload, type: QTY_DOWN });
 export const changeComment = payload => ({ payload, type: CHANGE_COMMENT });
+// export const sendOrder = payload => ({ payload, type: SEND_ORDER });
 
-// export const addToCartStarted = payload => ({ payload, type: ADD_TO_CART_START });
-// export const addToCartSuccess = payload => ({ payload, type: ADD_TO_CART_SUCCESS });
-// export const addToCartError = payload => ({ payload, type: ADD_TO_CART_ERROR });
+export const sendOrderStarted = payload => ({ payload, type: SEND_ORDER_START });
+export const sendOrderSuccess = payload => ({ payload, type: SEND_ORDER_SUCCESS });
+export const sendOrderError = payload => ({ payload, type: SEND_ORDER_ERROR });
 
 // /* thunk creators */
-// export const addToCart = () => {
-//   return (dispatch, getState) => {
-//     dispatch(addToCartStarted());
+export const sendOrder = orderDetails => {
+  return (dispatch, getState) => {
+    dispatch(sendOrderStarted());
 
-//     Axios
-//       .get(`http://localhost:8000/api/cart`)
-//       .then(res => {
-//         dispatch(addToCartSuccess(res.data));
-//       })
-//       .catch(err => {
-//         dispatch(addToCartError(err.message || true));
-//       });
-//   };
-// };
+    Axios
+      .post(`http://localhost:8000/api/order`, orderDetails)
+      .then(res => {
+        dispatch(sendOrderSuccess(res.data));
+      })
+      .catch(err => {
+        dispatch(sendOrderError(err.message || true));
+      });
+  };
+};
 
 
 
@@ -102,12 +104,12 @@ export const reducer = (statePart = [], action = {}) => {
         data: [...statePart.data.filter(product => product.cartId !== action.payload)],
       };
     }
-    case CLEAR_CART: {
-      return {
-        ...statePart,
-        data: [],
-      };
-    }
+    // case CLEAR_CART: {
+    //   return {
+    //     ...statePart,
+    //     data: [],
+    //   };
+    // }
     case QTY_UP: {
       return {
         ...statePart,
@@ -141,34 +143,34 @@ export const reducer = (statePart = [], action = {}) => {
           : product ),
       };
     }
-    // case ADD_TO_CART_START: {
-    //   return {
-    //     ...statePart,
-    //     loading: {
-    //       active: true,
-    //       error: false,
-    //     },
-    //   };
-    // }
-    // case ADD_TO_CART_SUCCESS: {
-    //   return {
-    //     ...statePart,
-    //     loading: {
-    //       active: false,
-    //       error: false,
-    //     },
-    //     data: action.payload,
-    //   };
-    // }
-    // case ADD_TO_CART_ERROR: {
-    //   return {
-    //     ...statePart,
-    //     loading: {
-    //       active: false,
-    //       error: action.payload,
-    //     },
-    //   };
-    // }
+    case SEND_ORDER_START: {
+      return {
+        ...statePart,
+        loading: {
+          active: true,
+          error: false,
+        },
+      };
+    }
+    case SEND_ORDER_SUCCESS: {
+      return {
+        ...statePart,
+        loading: {
+          active: false,
+          error: false,
+        },
+        data: [],
+      };
+    }
+    case SEND_ORDER_ERROR: {
+      return {
+        ...statePart,
+        loading: {
+          active: false,
+          error: action.payload,
+        },
+      };
+    }
     default:
       return statePart;
   }
