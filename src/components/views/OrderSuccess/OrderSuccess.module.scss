@@ -1,0 +1,16 @@
+@import '../../../styles/settings.scss';
+
+.root {
+
+  h3 {
+    margin-bottom: $base-padding;
+  }
+
+  p {
+    text-align: justify;
+  }
+
+  .strong {
+    color: $font-color-header;
+  }
+}

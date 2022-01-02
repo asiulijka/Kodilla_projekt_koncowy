@@ -10,6 +10,7 @@ import { ProductsPage } from './components/views/ProductsPage/ProductsPage';
 import { ProductPage } from './components/views/ProductPage/ProductPage';
 import { Cart } from './components/views/Cart/Cart';
 import { Order } from './components/views/Order/Order';
+import { OrderSuccess } from './components/views/OrderSuccess/OrderSuccess';
 import { Login } from './components/views/Login/Login';
 import { Register } from './components/views/Register/Register';
 import { About } from './components/views/About/About';
@@ -26,6 +27,7 @@ const App = () => (
           <Route exact path='/about' component={About} />
           <Route exact path='/cart' component={Cart} />
           <Route exact path='/order' component={Order} />
+          <Route exact path='/orderSuccess' component={OrderSuccess} />
           <Route exact path='/login' component={Login} />
           <Route exact path='/register' component={Register} />
           <Route path='*' component={NotFound} />

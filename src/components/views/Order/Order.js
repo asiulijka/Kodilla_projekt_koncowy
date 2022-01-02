@@ -144,9 +144,11 @@ const Component = ({className, cart, sendOrder }) => {
 
             
             <div className={styles.inputContainer}>
-              <Button variant='main' onClick={handleOrder}>
-                Submit
-              </Button>
+              <Link to='/orderSuccess'>
+                <Button variant='main' onClick={handleOrder}>
+                  Submit
+                </Button>
+              </Link>
             </div>
 
           </form>

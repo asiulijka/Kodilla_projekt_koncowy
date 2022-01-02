@@ -60,12 +60,12 @@ exports.postOrder = async (req, res) => {
         // productComment: comment,
       // } = product;
 
-      console.log(product.productId, product.productQty, product.productComment);
+      console.log(product._id, product.qty, product.comment);
 
       const newOrder = new Order({
-        productId: product.productId,
-        productQty: product.productQty, 
-        productComment: product.productComment, 
+        productId: product._id,
+        productQty: product.qty, 
+        productComment: product.comment, 
         customerName: customerName,
         customerEmail: customerEmail,
         customerPhone: customerPhone,
