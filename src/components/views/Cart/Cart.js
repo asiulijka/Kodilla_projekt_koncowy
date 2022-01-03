@@ -115,7 +115,7 @@ const Component = ({className, cart, removeFromCart, changeComment}) => {
   
   
           <Link className={'col-4 ' + styles.checkoutBtn} to='/order'>
-            <Button variant='main'>
+            <Button variant='main-long'>
               Continue to checkout
             </Button>
           </Link>

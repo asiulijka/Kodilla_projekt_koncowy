@@ -1,37 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import clsx from 'clsx';
-
 import { connect } from 'react-redux';
+
 import { qtyUp, qtyDown } from '../../../redux/cartRedux.js';
+import { Button } from '../../common/Button/Button';
 
 import styles from './QtyWidget.module.scss';
 
-import { Button } from '../../common/Button/Button';
-
-
 const Component = ({className, id, qty, qtyUp, qtyDown }) => (
   <div className={clsx(className, styles.root)}>
-
     <div className='container'>
-      <div className={styles.freeze}>
-        <div className='row'>
-          <div className={'col-1 ' + styles.buttonContainer}>
-            <Button className={styles.innerButton} variant='quantityChange' onClick={() => qtyDown(id)}>-</Button>
-          </div>
-
-          <div className={'col-1 '  + styles.quantity}>{qty}</div>
-          
-          <div className={'col-1 '  + styles.buttonContainer}>
-            <Button className={styles.innerButton} variant='quantityChange' onClick={() => qtyUp(id)}>+</Button>
-          </div>
-          
+      <div className='row'>
+        <div className={'col-1 ' + styles.buttonContainer}>
+          <Button variant='quantityChange' onClick={() => qtyDown(id)}>-</Button>
         </div>
 
+        <div className={'col-1 '  + styles.quantity}>{qty}</div>
+  
+        <div className={'col-1 '  + styles.buttonContainer}>
+          <Button variant='quantityChange' onClick={() => qtyUp(id)}>+</Button>
+        </div>   
       </div>
     </div>
-
   </div>
 );
 

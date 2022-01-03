@@ -1,50 +1,40 @@
 @import '../../../styles/settings.scss';
 
-// .root {
-// }
-
 .main {
   background-color: $color-main;
-  // font-size: 16px;
-  // line-height: 24px;
-  // font-weight: 600;
-  // padding: 10px 30px;
   border: 0;
   color: $color-light-blue;
-  // text-align: center;
   line-height: 1.1;
   padding: $base-size;
-  // margin: 0 $base-size;
   border-radius: 7px;
   cursor: pointer;
   font-weight: 300;
-  // text-transform: uppercase;
-  // transition: all 0.5s;
-  // margin: 0;
+  width: $base-padding*4.2;
 
   &:hover {
     background: radial-gradient($color-main 40%, $color-main-dark);
-    // background-color: $color-main-dark;
-    // background: linear-gradient($color-main-dark, 10%, $color-main, 90%, $color-main-dark);
   }
+}
+
+.main-long {
+  @extend .main;
+  width: $base-padding*5.2;
 }
 
 .quantityChange {
   @extend .main;
   background-color: $font-color-header;
-  // color: $color-main-dark;
   font-weight: 700;
   line-height: 1;
+  width: $base-padding*1.5;
 
   &:hover {
     background: radial-gradient($font-color-header, $font-color-header-dark);
-    // background-color: $color-main-dark;
-    // background: linear-gradient($color-main-dark, 10%, $color-main, 90%, $color-main-dark);
   }
 }
 
 .cartGrey {
-  @extend .main;
+  @extend .main-long;
   background-color: $color-light-grey;
   font-size: $base-size*1.1;
   border: 1px solid $font-color-text;
@@ -54,8 +44,6 @@
   &:hover {
     background: radial-gradient($color-main, $font-color-text);
     color: $color-light-grey;
-    // background-color: $color-main-dark;
-    // background: linear-gradient($color-main-dark, 10%, $color-main, 90%, $color-main-dark);
   }
 }
 
@@ -65,13 +53,11 @@
 
   &:hover {
     background: radial-gradient($font-color-header, $font-color-header-dark);
-    // background-color: $color-main-dark;
-    // background: linear-gradient($color-main-dark, 10%, $color-main, 90%, $color-main-dark);
   }
 }
 
 .small {
   @extend .update;
-  // font-weight: 300;
   font-size: $base-size*1.2;
+  width: $base-padding*5.2;
 }

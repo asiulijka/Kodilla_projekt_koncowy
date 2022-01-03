@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import clsx from 'clsx';
 
@@ -70,11 +71,11 @@ const Component = ({className, product, _id, name, price, img1, addToCart, decor
                     <p><strong>Price from</strong></p>
                     <p><strong>{`$${product.price}`}/each </strong></p>
                   </div>
-                  <div className={'col ' + styles.productIntro}>
-                    <Button className={styles.addQuantity} variant='main'>
+                  <Link className={'col ' + styles.productIntro} to={`/underConstruction/`}>
+                    <Button className={styles.addQuantity} variant='main-long'>
                       Check for price details
                     </Button>
-                  </div>
+                  </Link>
                 </div>
               </div>
   
@@ -120,7 +121,7 @@ const Component = ({className, product, _id, name, price, img1, addToCart, decor
 
                   <Button 
                     className={styles.addQuantityButton} 
-                    variant='main' 
+                    variant='main-long' 
                     onClick={() => {
                       addToCart({...product, qty: productQty});
                       redirectToHomePage();
