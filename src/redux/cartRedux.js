@@ -1,4 +1,5 @@
 import Axios from 'axios';
+import { api } from '../settings';
 
 /* selectors */
 export const getAll = ({cart}) => cart.data;
@@ -42,7 +43,7 @@ export const sendOrder = orderDetails => {
     dispatch(sendOrderStarted());
 
     Axios
-      .post(`http://localhost:8000/api/order`, orderDetails)
+      .post(`${api.url}/api/order`, orderDetails)
       .then(res => {
         dispatch(sendOrderSuccess(res.data));
       })
