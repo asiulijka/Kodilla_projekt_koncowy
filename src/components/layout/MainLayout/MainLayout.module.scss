@@ -1,19 +1,10 @@
 @import '../../../styles/settings.scss';
 
 .root {
-  // 
-  // justify-content: center;
-    // background: linear-gradient(180deg, red 40%, green 40%);
 
   .pageWrapper {
     padding: $base-padding;
-    // background: linear-gradient(180deg, red 40%, green 40%);
-    // justify-content: center;
     background-color: $color-light-grey;
-    // background: linear-gradient(110deg, red 60%, green 60%);
-    // background: linear-gradient(110deg, red 60%, green 60%);
-    // background: linear-gradient(red, 5%, green, 95%, red);
-    // border: 2px solid red;
     min-height: 400px;
     margin-bottom: 43px;
   }

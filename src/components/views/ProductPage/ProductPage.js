@@ -2,20 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-
+import { connect } from 'react-redux';
 import clsx from 'clsx';
 
-import { connect } from 'react-redux';
 import { getById } from '../../../redux/productsRedux.js';
-// import { fetchById } from '../../../redux/productsRedux.js';
-// import { fetchAllProducts } from '../../../redux/productsRedux.js';
-// import { getAll as getAllCart } from '../../../redux/cartRedux.js';
 import { addToCart } from '../../../redux/cartRedux.js';
-
-import styles from './ProductPage.module.scss';
 import { Button } from './../../common/Button/Button';
 import { SingleProductQtyWidget } from './../../features/SingleProductQtyWidget/SingleProductQtyWidget';
 import { NotFound } from '../NotFound/NotFound.js';
+
+import styles from './ProductPage.module.scss';
+
 
 const Component = ({className, product, _id, name, price, img1, addToCart, decoration, colours }) => {
 
@@ -38,7 +35,7 @@ const Component = ({className, product, _id, name, price, img1, addToCart, decor
         <div className="container">
           <div className="row">
   
-            <div className={'col-5 ' + styles.pageColumnLeft}>
+            <div className='col-5'>
               <div className={styles.photoContainer}>
                 <img className={styles.photo} src={product.img1} alt='Main Product Photo here' />
               </div>
@@ -59,9 +56,7 @@ const Component = ({className, product, _id, name, price, img1, addToCart, decor
               </div>
             </div>
   
-  
             <div className={'col-7 ' + styles.pageColumnRight}>
-  
               <div className={'container ' + styles.productInfoContainer}>
                 <div className='row'>
                   <div className={'col-6 ' + styles.productIntro}>
@@ -131,9 +126,7 @@ const Component = ({className, product, _id, name, price, img1, addToCart, decor
                   </Button>
                 </div>
               </div>
-            
             </div>
-          
           </div>
         </div>
       </div>
@@ -144,14 +137,11 @@ const Component = ({className, product, _id, name, price, img1, addToCart, decor
 Component.propTypes = {
   className: PropTypes.string,
   product: PropTypes.array,
-  // cart: PropTypes.array,
-  // fetchById: PropTypes.func,
   addToCart: PropTypes.func,
   _id: PropTypes.string,
   name: PropTypes.string,
   price: PropTypes.number,
   img1: PropTypes.string,
-  // addToCart: PropTypes.func,
   decoration: PropTypes.string,
   colours: PropTypes.string,
 };
@@ -161,16 +151,12 @@ const mapStateToProps = (state, props) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-//   someAction: arg => dispatch(reduxActionCreator(arg)),
-  // fetchAllProducts: () => dispatch(fetchAllProducts()),
-  // fetchById: id => dispatch(fetchById(id)),
   addToCart: product => dispatch(addToCart(product)),
 });
 
 const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
 
 export {
-  // Component as ProductPage,
   Container as ProductPage,
   Component as ProductPageComponent,
 };

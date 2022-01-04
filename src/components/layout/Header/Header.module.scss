@@ -5,14 +5,8 @@
   padding: 0 $base-padding;
   background: linear-gradient($color-main-dark, 10%, $color-main, 90%, $color-main-dark);
   
-
   .topMenu {
     display: flex;
-
-    // .subpages {
-      // display: flex;
-      // align-self: stretch;
-    // }
 
     .customer {
       margin-inline-start: auto;
@@ -32,10 +26,11 @@
         font-size: 13px;
         padding: 0 1rem;
         color: $color-light-blue;
+        text-decoration: none;
       
-        // &.active {
-        //   color: red; 
-        // }
+        &:hover {
+          font-weight: 600;
+        }
       }
     }
   }

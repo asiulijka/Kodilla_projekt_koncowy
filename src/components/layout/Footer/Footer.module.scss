@@ -7,36 +7,15 @@
   height: 55px;
   padding: 0 $base-padding;
 
-    .copyright {
-      text-align: center;
-      padding: 1rem;
+  .copyright {
+    text-align: center;
+    padding: 1rem;
 
-      p {
-        margin: 0;
-        font-size: 14px;
-        line-height: 26px;
-        color: $color-light-blue;
-      }
+    p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 26px;
+      color: $color-light-blue;
     }
-
-    // .socialMedia {
-    //   text-align: right;
-    //   ul {
-    //     margin: 0;
-    //     padding: 0;
-    //     list-style: none;
-
-    //     li {
-    //       display: inline-block;
-    //       margin-left: 1rem;
-
-    //       a {
-    //         text-decoration: none;
-    //       }
-    //     }
-    //   }
-    // }
-    
-  
-
+  }
 }

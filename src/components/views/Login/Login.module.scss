@@ -2,26 +2,16 @@
 
 .root {
 
-  // .orderContainer {
-  //   border: 1px solid $color-main;
-  //   border-radius: 7px;
-  //   // margin: $base-padding*0.5 $base-padding*20 $base-padding*0.5 $base-padding*3;
-  //   margin: $base-padding;
-  //   padding: $base-padding;
-
   .mainContainer{
     text-align: -webkit-center;
 
     .formContainer {
       margin: $base-padding*0.5 $base-padding*15;
       max-width: 300px;
-
       border: 1px solid $color-main;
       border-radius: 7px;
-      // margin: $base-padding*0.5 $base-padding*20 $base-padding*0.5 $base-padding*3;
       margin: $base-padding;
       padding: $base-padding;
-
 
       .inputContainer {
         margin: $base-padding*0.5;
@@ -31,24 +21,13 @@
           border: 1px solid $font-color-header;
           border-radius: 7px;
           padding: $base-padding*0.1 $base-padding*0.5;
-          // background-color: $color-main-dark;
           color: $color-main-dark;
-          // color: white;
         }
-
       }
     }
 
     .pRegister {
       color: $color-main;
-      // color: red;
     }
-
   }
-
-    
-
-
-  // }
-
 }

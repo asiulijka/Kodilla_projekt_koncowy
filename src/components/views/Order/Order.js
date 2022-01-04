@@ -1,16 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import clsx from 'clsx';
-
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+
+import { Button } from './../../common/Button/Button';
 import { getAll as getAllCart, sendOrder } from '../../../redux/cartRedux.js';
 import { calculateSubtotal, calculateGst, calculateTotal, calculateDelivery } from '../../../utils/commonFunctions.js';
 
 import styles from './Order.module.scss';
-
-import { Button } from './../../common/Button/Button';
-import { Link } from 'react-router-dom';
 
 const Component = ({className, cart, sendOrder }) => {
 
@@ -32,8 +30,7 @@ const Component = ({className, cart, sendOrder }) => {
 
   return (
     <div className={clsx(className, styles.root)}>
-      <h3>Your Order Summary</h3>
-      
+      <h3>Your Order Summary</h3> 
       <div className='container'>
         <div className={'row ' + styles.orderContainer}>
 
@@ -81,10 +78,7 @@ const Component = ({className, cart, sendOrder }) => {
                 </div>
               </div>
             ))}
-
-
           </div>
-
         </div>
 
         <h3>Whats next?</h3>
@@ -97,9 +91,7 @@ const Component = ({className, cart, sendOrder }) => {
         </div>
 
         <div className={'row ' + styles.orderContainer}>
-
           <form className={styles.formContainer}>
-
             <div className={styles.inputContainer}>
               <input
                 type="text"
@@ -141,8 +133,7 @@ const Component = ({className, cart, sendOrder }) => {
                 onChange={event => setCustomerMessage(event.target.value)}
               />
             </div>
-
-            
+ 
             <div className={styles.inputContainer}>
               <Link to='/orderSuccess'>
                 <Button variant='main' onClick={handleOrder}>
@@ -150,20 +141,14 @@ const Component = ({className, cart, sendOrder }) => {
                 </Button>
               </Link>
             </div>
-
           </form>
-
-
         </div>
-
-
       </div>
     </div>
   );
 };
 
 Component.propTypes = {
-  children: PropTypes.node,
   className: PropTypes.string,
   cart: PropTypes.array,
   sendOrder: PropTypes.func,
@@ -180,7 +165,6 @@ const mapDispatchToProps = dispatch => ({
 const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
 
 export {
-  // Component as Order,
   Container as Order,
   Component as OrderComponent,
 };
