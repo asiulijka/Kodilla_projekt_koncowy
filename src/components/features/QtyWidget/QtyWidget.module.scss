@@ -1,25 +1,21 @@
 @import '../../../styles/settings.scss';
 
 .root {
-
  
- 
+  .buttonContainer {
+      padding: 0;
+      margin: 0;
+      width: $base-padding*1.5;
+    }
 
-    .buttonContainer {
-        padding: 0;
-        margin: 0;
-        width: $base-padding*1.5;
-      }
-
-      .quantity {
-        @extend .buttonContainer;
-        padding: $base-padding*0.2 $base-padding;
-        border: 1px solid $font-color-header;
-        border-radius: 7px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 50px;    
-      }
+    .quantity {
+      @extend .buttonContainer;
+      padding: $base-padding*0.2 $base-padding;
+      border: 1px solid $font-color-header;
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;    
+    }
 }
-

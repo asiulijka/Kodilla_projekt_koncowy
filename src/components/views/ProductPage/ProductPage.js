@@ -14,7 +14,7 @@ import { NotFound } from '../NotFound/NotFound.js';
 import styles from './ProductPage.module.scss';
 
 
-const Component = ({className, product, _id, name, price, img1, addToCart, decoration, colours }) => {
+const Component = ({className, product, addToCart }) => {
 
   const [productQty, setProductQty] = React.useState(1);
   
@@ -136,12 +136,6 @@ Component.propTypes = {
   className: PropTypes.string,
   product: PropTypes.array,
   addToCart: PropTypes.func,
-  _id: PropTypes.string,
-  name: PropTypes.string,
-  price: PropTypes.number,
-  img1: PropTypes.string,
-  decoration: PropTypes.string,
-  colours: PropTypes.string,
 };
 
 const mapStateToProps = (state, props) => ({
