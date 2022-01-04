@@ -77,8 +77,9 @@
   .orderContainer {
     border: 1px solid $color-main-dark;
     border-radius: 7px;
-    margin: $base-padding*0.5 $base-padding*20 $base-padding*0.5 $base-padding*3;
+    margin: $base-padding*0.5 $base-padding*3;
     padding: $base-padding;
+    width: fit-content;
   
     .values{
       padding: 0;
@@ -87,20 +88,24 @@
     .pOrder {
       font-size: $base-size*1.2;
       margin-bottom: $base-padding*0.25;
+      padding-left: $base-padding*0.5;
     }
 
     .pOrderLast {
       @extend .pOrder;
-      border-top: 1px solid $color-main-dark;
+      margin-bottom: 0;
+    }
+
+    .orderLine {
+      margin: $base-padding*0.25 0;
       border-bottom: 1px solid $color-main-dark;
-      margin-bottom: $base-padding;
-      padding: $base-padding*0.25 0;
     }
   
     .checkoutBtn {
       align-self: flex-end;
       margin-bottom: $base-padding*0.5;
-      padding: 0;
+      padding: 0 $base-padding;
+      font-size: $base-size*1.2;
     }
   }
 }

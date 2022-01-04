@@ -92,21 +92,25 @@ const Component = ({className, cart, removeFromCart, changeComment}) => {
           <div className={'col-5 ' + styles.values}>
             <p className={styles.pOrder}>Subtotal excl. GST</p>
             <p className={styles.pOrder}>GST</p>
+            <div className={styles.orderLine}></div>
             <p className={styles.pOrderLast}>Delivery</p>
+            <div className={styles.orderLine}></div>
             <p><strong>Total</strong></p>
           </div>
   
           <div className={'col-2 ' + styles.values}>
             <p className={styles.pOrder}>${calculateSubtotal(cart).toFixed(2)}</p>
             <p className={styles.pOrder}>${calculateGst(cart).toFixed(2)}</p>
+            <div className={styles.orderLine}></div>
             <p className={styles.pOrderLast}>${calculateDelivery(cart).toFixed(2)}</p>
+            <div className={styles.orderLine}></div>
             <p><strong>${calculateTotal(cart).toFixed(2)}</strong></p>
           </div>
-          
+           
           <div className='col-1'></div>
   
           <Link className={'col-4 ' + styles.checkoutBtn} to='/order'>
-            <Button variant='main-long'>
+            <Button variant='main'>
               Continue to checkout
             </Button>
           </Link>
