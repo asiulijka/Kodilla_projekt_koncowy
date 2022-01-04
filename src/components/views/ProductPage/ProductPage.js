@@ -56,7 +56,7 @@ const Component = ({className, product, _id, name, price, img1, addToCart, decor
               </div>
             </div>
   
-            <div className={'col-7 ' + styles.pageColumnRight}>
+            <div className='col-7'>
               <div className={'container ' + styles.productInfoContainer}>
                 <div className='row'>
                   <div className={'col-6 ' + styles.productIntro}>
@@ -81,24 +81,22 @@ const Component = ({className, product, _id, name, price, img1, addToCart, decor
               </div>
   
               <div className={'container ' + styles.productInfoContainer}>
-                <p className={styles.overview}><strong>Description</strong></p>
-                <p className={styles.description}>
-                  {product.description}
-                </p>
+                <p><strong>Description</strong></p>
+                <p>{product.description}</p>
               </div>
   
               <div className={'container ' + styles.productInfoContainer}>
-                <p className={styles.overview}><strong>Dimentions: </strong></p>
+                <p><strong>Dimentions: </strong></p>
                 <p>{product.dimentions}</p>
               </div>
   
               <div className={'container ' + styles.productInfoContainer}>
-                <p className={styles.overview}><strong>Colours: </strong></p>
+                <p><strong>Colours: </strong></p>
                 <p>{product.colours}</p>
               </div>
   
               <div className={'container ' + styles.decoration}>
-                <p className={styles.overview}><strong>Decoration method: </strong></p>
+                <p><strong>Decoration method: </strong></p>
                 <p>{product.decoration}</p>
               </div>
   

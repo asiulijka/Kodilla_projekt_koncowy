@@ -2,191 +2,77 @@
 
 .root {
 
+  .photoContainer {
+    min-height: 80%;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: $base-padding*0.5;
 
-
-    .photoContainer {
-      min-height: 80%;
-      position: relative;
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      padding-top: $base-padding*0.5;
-
-      .photo {
-        max-width: 100%;
-        object-fit: cover;
-      }
-
-    //   .expandButton {
-    //     position: absolute;
-    //     bottom: 5%;
-    //     right: 5%;
-    //   }
+    .photo {
+      max-width: 100%;
+      object-fit: cover;
+      border: 1px solid $color-main;
+      border-radius: 7px;
     }
-
-    .sliderBox {
-      // padding: 10px 15px;
-      padding: $base-padding * 0.5;
-      // display: flex;
-      min-height: 20%;
-      // position: relative;
-      justify-content: space-between;
-      // background-color: $font-color-text;
-  
-      .photoContainerMini {
-        // background-color: $font-color-header;
-        margin: 0 10px;
-        padding: 0;
-        
-        .photoMini {
-          // width: 150px;
-          // height: 100px;
-          max-width: 100%;
-          object-fit: cover;
-        }
-      }
-    }
-
-
-
-
-
-
-  .pageColumnRight {
-    // margin: 15px 0;
-    // margin: 0;
-
-    .productInfoContainer {
-      // border-bottom: 2px solid $font-color-header;
-      // margin: 0;
-      padding: $base-padding*0.5 $base-padding;
-
-
-
-    
-      .productIntro {
-        // margin: 0;
-        // justify-content: space-between;
-
-        // display: flex;
-        // align-items: center;
-        // justify-content: center;
-        align-self: center;
-       
-        .productIntro p {
-          text-align: right;
-        }
-
-        // h4 {
-        //   font-weight: 600;
-        // }
-      }
-
-      .productIntro p {
-        text-align: right;
-        color: $color-main;
-
-      }
-
-      // .starsRow {
-      //   color: $gray-text-color;
-      //   margin: 0;
-
-        p {
-          margin: 0;
-      //     padding: 0 10px;
-      //     font-size: 90%;
-      //     margin: 5px 0;
-      //     color: $product-page-bg-dark;
-        }
-
-      //   p:first-of-type {
-      //     border-right: 2px solid $product-page-bg-photo;
-      //   }
-      // }
-
-      .addQuantity {
-        margin: $base-padding*0.5 0;
-        padding: 0;
-        // color: red;
-
-      }
-
-      .addQuantityButton {
-        @extend .addQuantity;
-        margin: $base-padding*0.25 $base-padding*0.5;
-      }
-
-      
-      .addQuantity p {
-        // color: $font-color-header-dark;
-        margin-bottom: $base-padding*0.5;
-        // margin-left: $base-padding*0.5;
-        padding: 0;
-      }
-
-      // .addToCartContainer {
-        // margin: 0;
-        // background-color: yellow;
-        
-
-      //   p {
-      //     margin: 0;
-      //     font-weight: 600;
-      //   }
-
-
-      // }
-
-      // .addToCartContainer:last-of-type {
-      //   margin-top: 15px;
-      //   align-items: center;
-      // }
-
-      // .overview {
-      //   font-weight: 600;
-      //   margin-bottom: 5px;
-      // }
-
-      // .description {
-      //   color: $product-page-bg-dark;
-      // }
-
-      // .availabilityContainer {
-      //   margin: 0;
-      // }
-
-      // .availabilityContainer p {
-        // font-weight: 600;
-        // position: relative;
-      // }
-
-      // .availabilityContainer div {
-        // left: 18%;
-        // position: absolute;
-        // color: $product-page-bg-dark;
-      // }
-
-      // .availabilityContainer:last-of-type p {
-      //   margin-bottom: 0;
-      // }
-
-      
-    }
-
-    .decoration {
-      @extend .productInfoContainer;
-      border-bottom: 2px solid $font-color-header;
-
-    }
-
-    // .productInfoContainer:last-of-type {
-    //   border-bottom: none;
-    //   padding-bottom: 0;
-    //   margin-bottom: 30px;
-    // }
   }
 
+  .sliderBox {
+    padding: $base-padding * 0.5;
+    min-height: 20%;
+    justify-content: space-between;
 
+    .photoContainerMini {
+      margin: 0 10px;
+      padding: 0;
+      
+      .photoMini {
+        max-width: 100%;
+        object-fit: cover;
+        border: 1px solid $font-color-header;
+        border-radius: 7px;
+      }
+    }
+  }
 
+  .productInfoContainer {
+    padding: $base-padding*0.5 $base-padding;
+
+    .productIntro {
+      align-self: center;
+      
+      .productIntro p {
+        text-align: right;
+      }
+    }
+
+    .productIntro p {
+      color: $color-main;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .addQuantity {
+      margin: $base-padding*0.5 0;
+      padding: 0;
+    }
+
+    .addQuantityButton {
+      @extend .addQuantity;
+      margin: $base-padding*0.25 $base-padding*0.5;
+    }
+
+    .addQuantity p {
+      margin-bottom: $base-padding*0.5;
+      padding: 0;
+    }  
+  }
+
+  .decoration {
+    @extend .productInfoContainer;
+    border-bottom: 2px solid $font-color-header;
+  }
 }

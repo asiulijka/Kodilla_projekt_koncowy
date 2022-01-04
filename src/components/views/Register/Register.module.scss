@@ -7,12 +7,10 @@
     .formContainer {
       margin: $base-padding*0.5 $base-padding*15;
       max-width: 300px;
-
       border: 1px solid $color-main;
       border-radius: 7px;
       margin: $base-padding;
       padding: $base-padding;
-
 
       .inputContainer {
         margin: $base-padding*0.5;
@@ -24,16 +22,11 @@
           padding: $base-padding*0.1 $base-padding*0.5;
           color: $color-main-dark;
         }
-
       }
     }
 
     .pRegister {
       color: $color-main;
     }
-
   }
-
-
-
 }
