@@ -32,8 +32,15 @@ app.use('*', (req, res) => {
 
 
 /* MONGOOSE */
-// mongoose.connect('localhost:27017/bottleo', { useNewUrlParser: true, useUnifiedTopology: true });
-mongoose.connect('mongodb://localhost:27017/bottleo', { useNewUrlParser: true, useUnifiedTopology: true });
+// mongoose.connect(
+  // 'mongodb://localhost:27017/bottleo', 
+  // { useNewUrlParser: true, useUnifiedTopology: true }
+// );
+mongoose.connect(
+  `mongodb+srv://${process.env.BOTTLEO_DB_USER}:${process.env.BOTTLEO_DB_PASSWORD}` + 
+  `@cluster0.uaxzb.mongodb.net/bottleo?retryWrites=true&w=majority`, 
+  { useNewUrlParser: true, useUnifiedTopology: true }
+);
 const db = mongoose.connection;
 db.once('open', () => {
   console.log('Successfully connected to the database');
