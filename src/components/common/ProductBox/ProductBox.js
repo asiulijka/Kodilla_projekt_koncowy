@@ -22,7 +22,7 @@ const Component = ({className, _id, name, price, img1, addToCart, decoration, co
       <div className={'container ' + styles.mainContainer}>
         <div className={styles.photo}>
           <Link to={`/products/${_id}`}>
-            <img src={img1} alt='product main photo' />
+            <img src={img1} alt='product main' />
           </Link>
         </div>
 

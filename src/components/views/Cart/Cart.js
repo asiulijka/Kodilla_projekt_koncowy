@@ -25,7 +25,7 @@ const Component = ({className, cart, removeFromCart, changeComment}) => {
           <div className={'row ' + styles.productContainer} key={product.cartId}>
 
             <div className={'col-2 ' + styles.photo}>
-              <img src={product.img1} alt='product main photo' />
+              <img src={product.img1} alt='product main' />
             </div>
 
             <div className={'col-3 ' + styles.description}>

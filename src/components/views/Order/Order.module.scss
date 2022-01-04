@@ -47,8 +47,10 @@
     }
 
     .formContainer {
-      margin: $base-padding*0.5 $base-padding*15;
+      // margin: $base-padding*0.5 $base-padding*15;
       max-width: 300px;
+      margin: $base-padding*0.5;
+      // text-align: -webkit-center;
 
       .inputContainer {
         margin: $base-padding*0.5;

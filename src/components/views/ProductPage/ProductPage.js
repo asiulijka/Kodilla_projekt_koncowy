@@ -37,7 +37,7 @@ const Component = ({className, product, _id, name, price, img1, addToCart, decor
   
             <div className='col-5'>
               <div className={styles.photoContainer}>
-                <img className={styles.photo} src={product.img1} alt='Main Product Photo here' />
+                <img className={styles.photo} src={product.img1} alt='Main Product here' />
               </div>
   
               <div className={'row ' + styles.sliderBox}>

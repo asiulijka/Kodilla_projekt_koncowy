@@ -30,10 +30,8 @@ export const fetchAllProductsError = payload => ({ payload, type: FETCH_ALL_PROD
 
 /* thunk creators */
 export const fetchAllProducts = () => {
-  console.log('fetchAllProducts in productsRedux START');
   return (dispatch, getState) => {
     dispatch(fetchAllProductsStarted());
-    console.log('fetchAllProducts in productsRedux END');
 
     Axios
       .get(`http://localhost:8000/api/products`)

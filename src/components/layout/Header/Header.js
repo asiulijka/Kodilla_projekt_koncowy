@@ -1,11 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import clsx from 'clsx';
+
 import { NavLink } from 'react-router-dom';
 
+import clsx from 'clsx';
 import styles from './Header.module.scss';
 
-const Component = ({className}) => (
+import { connect } from 'react-redux';
+import { getAll as getAllCart } from '../../../redux/cartRedux.js';
+
+const Component = ({className, cart}) => (
   <div className={clsx(className, styles.root)}>
     <div className='container'>
       <div className={styles.topMenu}>
@@ -36,7 +40,7 @@ const Component = ({className}) => (
           <ul>
             <li>
               <NavLink to='/cart' className={styles.nav}>
-                Cart
+                {cart.length ? `Cart (${cart.length})` : 'Cart'}
               </NavLink>
             </li>
             <li>
@@ -52,16 +56,25 @@ const Component = ({className}) => (
           </ul>
         </div>
       </div>
-
     </div>
   </div>
 );
 
 Component.propTypes = {
   className: PropTypes.string,
+  cart: PropTypes.array,
 };
 
+const mapStateToProps = state => ({
+  cart: getAllCart(state),
+});
+
+const mapDispatchToProps = dispatch => ({
+});
+
+const Container = connect(mapStateToProps, mapDispatchToProps)(Component); 
+
 export {
-  Component as Header,
+  Container as Header,
   Component as HeaderComponent,
 };

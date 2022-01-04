@@ -8,6 +8,6 @@ export const calculateSubtotal = cart => {
 
 export const calculateGst = cart => calculateSubtotal(cart) * 0.1;
 
-export const calculateTotal = cart =>  cart.length == 0 ? 0 : calculateSubtotal(cart) + calculateDelivery(cart) + calculateGst(cart);
+export const calculateTotal = cart =>  cart.length === 0 ? 0 : calculateSubtotal(cart) + calculateDelivery(cart) + calculateGst(cart);
 
-export const calculateDelivery = cart => cart.length == 0 ? 0 : 20.00;
+export const calculateDelivery = cart => cart.length === 0 ? 0 : 20.00;
